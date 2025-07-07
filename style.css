@@ -1,0 +1,413 @@
+/* Variables CSS para colores */
+:root {
+    --primary-color: #E21E2F; /* Rojo del logo */
+    --secondary-color: #333333; /* Negro oscuro para texto y fondos */
+    --light-color: #F8F8F8; /* Blanco muy claro para fondos */
+    --text-color: #555555; /* Gris para texto general */
+    --white-color: #FFFFFF;
+    --dark-color: #000000;
+}
+
+/* Reset básico y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; text-align: center; margin-bottom: 40px;}
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: darken(var(--primary-color), 10%); /* Esto no es CSS nativo, pero es una idea. Usar un color un poco más oscuro */
+    filter: brightness(0.9); /* Alternativa para oscurecer el color */
+}
+
+/* Header */
+header {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px; /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--white-color);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger menu para móviles */
+.hamburger-menu {
+    display: none; /* Oculto por defecto en desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--white-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background-hero.jpg') no-repeat center center/cover;
+    color: var(--white-color);
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: var(--white-color);
+}
+
+.hero-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--white-color);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+/* Sections generales */
+section {
+    padding: 80px 0;
+    background-color: var(--white-color);
+    margin-bottom: 20px; /* Espacio entre secciones */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+section:nth-of-type(even) { /* Para secciones alternas */
+    background-color: var(--light-color);
+}
+
+/* Services Section */
+.services-section .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-item i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Why Us Section */
+.why-us-section .why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.why-us-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.why-us-item i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--white-color);
+}
+
+.contact-section .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: auto;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+}
+
+.map-container {
+    margin-top: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 3em;
+    }
+
+    /* Navegación responsive */
+    .main-nav ul {
+        display: none; /* Oculta la navegación por defecto */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-color);
+        position: absolute;
+        top: 90px; /* Debajo del header */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .main-nav ul li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    .hamburger-menu {
+        display: block; /* Muestra el botón hamburguesa */
+    }
+
+    /* Animación del botón hamburguesa */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .service-grid, .why-us-grid, .contact-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .contact-info, .contact-form {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section h2 {
+        font-size: 1.5em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Fondo para Hero Section, puedes reemplazar con una imagen tuya */
+.hero-section {
+    color: #fff; /* Color del texto blanco para contrastar con el fondo */
+    overflow: hidden;
+    /* Puedes usar una imagen de fondo genérica o reemplazarla con una tuya */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('URL_DE_TU_IMAGEN_DE_FONDO.jpg') no-repeat center center/cover; */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/Portada_02.jpg') no-repeat center center/cover;
+}
