@@ -82,6 +82,8 @@ header .container {
 .logo img {
     height: 60px; /* Ajusta el tamaño del logo */
     width: auto;
+    border-radius: 10%;
+    position: left;
 }
 
 .main-nav ul {
@@ -165,9 +167,9 @@ header .container {
 
 /* Sections generales */
 section {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: var(--white-color);
-    margin-bottom: 20px; /* Espacio entre secciones */
+    margin-bottom: 80px; /* Espacio entre secciones */
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
@@ -328,7 +330,7 @@ footer {
     h3 { font-size: 1.6em; }
 
     .hero-section {
-        padding: 80px 0;
+        padding: 100px 0;
     }
 
     .hero-section h1 {
