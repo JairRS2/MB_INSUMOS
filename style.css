@@ -411,5 +411,74 @@ footer {
     overflow: hidden;
     /* Puedes usar una imagen de fondo genérica o reemplazarla con una tuya */
     /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('URL_DE_TU_IMAGEN_DE_FONDO.jpg') no-repeat center center/cover; */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/Portada_02.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalDeskto.svg') no-repeat center center/cover;
 }
+/* Añade esto al final de tu archivo CSS, después de los media queries existentes */
+
+/* Mejoras para la imagen del hero en móviles */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') no-repeat center center/cover;
+        background-attachment: scroll; /* Evita el efecto parallax en móviles */
+        min-height: 70vh; /* Aumenta un poco la altura para mejor visualización */
+        padding: 80px 20px; /* Más padding lateral en móviles */
+    }
+    
+    /* Asegura que el contenedor ocupe todo el ancho disponible */
+    .hero-section .container {
+        width: 100%;
+    }
+    
+    /* Ajusta el tamaño del logo en el header para móviles */
+    .logo img {
+        height: 50px;
+    }
+    
+    /* Mejora el espaciado de las secciones en móviles */
+    section {
+        padding: 80px 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') no-repeat center ;
+        min-height: 60vh;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .service-item, .why-us-item {
+        padding: 10px 15px;
+    }
+    
+    /* Mejora el formulario de contacto */
+    .contact-form {
+        padding: 0 10px;
+    }
+}
+
+/* Asegura que las imágenes sean responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mejora el botón hamburguesa para pantallas pequeñas */
+.hamburger-menu {
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Optimiza el menú desplegable para móviles */
+.main-nav ul {
+    z-index: 1000;
+}
+
+/* Ajusta el footer para móviles */
+footer {
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
