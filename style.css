@@ -323,6 +323,71 @@ footer {
     margin-top: 20px;
 }
 
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed; /* Asegura que se mantenga fijo en el viewport */
+    width: 60px;
+    height: 60px;
+    bottom: 40px; /* Distancia desde abajo */
+    right: 55px; /* Distancia desde la derecha */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%; /* Cambiado a 50% para un círculo perfecto */
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+}
+
+.whatsapp-float:hover {
+    background-color: #1DA851;
+}
+
+/* Estilos para el label/tooltip de WhatsApp */
+.whatsapp-label {
+    visibility: hidden; /* Oculto por defecto */
+    width: 170px; /* Ancho del tooltip */
+    background-color: #555; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute; /* Posiciona el label relativo al .whatsapp-float */
+    z-index: 1;
+    bottom: 100%; /* Posiciona el tooltip encima del botón */
+    left: 40%;
+    transform: translateX(-50%); /* Centra el tooltip horizontalmente */
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s; /* Transición para una aparición suave */
+    font-size: 0.42em; /* Tamaño de fuente más pequeño */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    margin-bottom: 10px; /* Espacio entre el tooltip y el botón */
+}
+
+/* Flecha del tooltip */
+.whatsapp-label::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* En la parte inferior del tooltip */
+    left: 50%;
+    margin-left: -5px; /* Ajusta la posición de la flecha */
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Mostrar el tooltip al pasar el ratón por encima del botón */
+.whatsapp-float:hover .whatsapp-label {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 { font-size: 2.8em; }
@@ -386,6 +451,20 @@ footer {
     .contact-info, .contact-form {
         padding: 0 15px;
     }
+
+    /* WhatsApp button on mobile */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    /* Ocultar el label en móviles para no saturar la pantalla */
+    .whatsapp-label {
+        display: none; /* Mejor ocultar el tooltip en pantallas pequeñas */
+    }
 }
 
 @media (max-width: 480px) {
@@ -402,6 +481,23 @@ footer {
     .btn {
         padding: 10px 20px;
         font-size: 0.9em;
+    }
+
+    .hero-section {
+         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') no-repeat center ;
+        min-height: 60vh;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .service-item, .why-us-item {
+        padding: 10px 15px;
+    }
+
+    /* Mejora el formulario de contacto */
+    .contact-form {
+        padding: 0 10px;
     }
 }
 
@@ -423,17 +519,17 @@ footer {
         min-height: 70vh; /* Aumenta un poco la altura para mejor visualización */
         padding: 80px 20px; /* Más padding lateral en móviles */
     }
-    
+
     /* Asegura que el contenedor ocupe todo el ancho disponible */
     .hero-section .container {
         width: 100%;
     }
-    
+
     /* Ajusta el tamaño del logo en el header para móviles */
     .logo img {
         height: 50px;
     }
-    
+
     /* Mejora el espaciado de las secciones en móviles */
     section {
         padding: 80px 0;
@@ -448,12 +544,12 @@ footer {
         background-size: cover;
         background-position: center center;
     }
-    
+
     /* Ajustes adicionales para pantallas muy pequeñas */
     .service-item, .why-us-item {
         padding: 10px 15px;
     }
-    
+
     /* Mejora el formulario de contacto */
     .contact-form {
         padding: 0 10px;
@@ -481,4 +577,3 @@ footer {
     padding: 20px 0;
     font-size: 0.9em;
 }
-
