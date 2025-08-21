@@ -170,7 +170,7 @@ section {
     padding: 100px 0;
     background-color: var(--white-color);
     margin-bottom: 80px; /* Espacio entre secciones */
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.05); */
 }
 
 section:nth-of-type(even) { /* Para secciones alternas */
@@ -185,11 +185,15 @@ section:nth-of-type(even) { /* Para secciones alternas */
     text-align: center;
 }
 
+.service-grid {
+    margin-top: 20px;
+}
+
 .service-item {
     background-color: var(--white-color);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -228,6 +232,58 @@ section:nth-of-type(even) { /* Para secciones alternas */
     font-size: 2.5em;
     color: var(--primary-color);
     margin-bottom: 15px;
+}
+
+/* Estilos para que la sección "¿Por Qué Elegir MB INSUMOS?" muestre 4 tarjetas en una fila */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.why-us-item {
+  background: #fff;
+  padding: 28px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.why-us-item i {
+  font-size: 34px;
+  color: #e53935; /* rojo similar al ejemplo */
+  background: rgba(229,57,53,0.06);
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.why-us-item h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.why-us-item p {
+  margin: 0;
+  color: #666;
+  max-width: 320px;
+}
+
+/* Responsive: 2 columnas en tablets, 1 en móviles */
+@media (max-width: 1000px) {
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Contact Section */
@@ -387,6 +443,20 @@ footer {
     opacity: 1;
 }
 
+/* Quitar líneas de borde de las tarjetas (cards) */
+.card {
+  border: none !important;
+}
+
+/* Si hay elementos internos con borde, asegurar que también se remueva */
+.card, .card .card-body {
+  border: 0 !important;
+}
+
+/* Quitar la sombra de las tarjetas dentro de la sección #software */
+.software-section .card {
+  box-shadow: none !important;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
