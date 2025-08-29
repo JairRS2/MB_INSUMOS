@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB INSUMOS - Soporte y Mantenimiento de Impresoras, Reparación Electrónica y Proveduría</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="LOGO.ico"> <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="LOGO.ico">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
 
+<body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="/img/LOGO.jpg" alt="MB INSUMOS Logo">
+                <img src="img/LOGO.jpg" alt="MB INSUMOS Logo">
             </div>
             <nav class="main-nav">
                 <button class="hamburger-menu" aria-label="Abrir menú de navegación">
@@ -26,7 +30,7 @@
                 <ul class="nav-list">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#services">Servicios</a></li>
-                    <li><a href="#software">Desarrollo de Software</a></li>
+                    <li><a href="#software-portfolio">Portfolio Software</a></li>
                     <li><a href="#why-us">¿Por qué Elegirnos?</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
@@ -37,9 +41,10 @@
     <section id="hero" class="hero-section">
         <div class="container">
             <h1>MB INSUMOS</h1>
-            <h2>Soluciones Integrales en Tecnología y Mantenimiento</h2>
-            <p>Tu aliado confiable para el soporte y reparación de equipos electrónicos, impresoras y proveeduría de insumos.</p>
-            <a href="#contact" class="btn btn-primary">¡Contáctanos Ahora!</a>
+            <h2>Soluciones Integrales en Tecnología y Desarrollo</h2>
+            <p>Tu aliado confiable para el soporte técnico, reparación de equipos y desarrollo de software
+                personalizado.</p>
+            <a href="#contact" class="btn">¡Descubre Nuestras Soluciones!</a>
         </div>
     </section>
 
@@ -50,7 +55,8 @@
                 <div class="service-item">
                     <i class="fas fa-print"></i>
                     <h3>Soporte y Mantenimiento de Impresoras</h3>
-                    <p>Mantenimiento preventivo y correctivo, reparación de impresoras de todas las marcas y modelos.</p>
+                    <p>Mantenimiento preventivo y correctivo, reparación de impresoras de todas las marcas y modelos.
+                    </p>
                 </div>
                 <div class="service-item">
                     <i class="fas fa-laptop"></i>
@@ -63,14 +69,14 @@
                     <p>Arreglo de pantallas, baterías, conectores de carga y solución de problemas de software.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Reparación de Equipos Electrónicos</h3>
-                    <p>Servicio técnico especializado para una amplia gama de dispositivos electrónicos.</p>
+                    <i class="fas fa-code"></i>
+                    <h3>Desarrollo de Software</h3>
+                    <p>Aplicaciones web, sistemas administrativos y plataformas personalizadas para tu negocio.</p>
                 </div>
                 <div class="service-item">
                     <i class="fas fa-boxes"></i>
                     <h3>Proveeduría de Insumos</h3>
-                    <p>Distribución de tóner, cartuchos de tinta, refacciones y accesorios para impresoras de todas las marcas.</p>
+                    <p>Distribución de tóner, cartuchos de tinta, refacciones y accesorios para impresoras.</p>
                 </div>
                 <div class="service-item">
                     <i class="fas fa-truck-moving"></i>
@@ -81,46 +87,140 @@
         </div>
     </section>
 
-    <section id="software" class="software-section">
-        <div class="container">
-            <h2>Desarrollo de Software</h2>
-            <p>Transformamos ideas en soluciones digitales que impulsan tu negocio. Desde aplicaciones web y móviles hasta sistemas administrativos y automatizaciones, entregamos productos escalables, seguros y fáciles de usar.</p>
+    <!-- NUEVA SECCIÓN DE PORTFOLIO DE SOFTWARE -->
+<section id="software-portfolio" class="software-portfolio">
+    <div class="container">
+        <div class="portfolio-intro">
+            <h2>Portfolio de Desarrollo de Software</h2>
+            <p>Descubre cómo transformamos ideas en soluciones digitales innovadoras. Cada proyecto es diseñado a medida para impulsar el crecimiento de nuestros clientes.</p>
+        </div>
 
-            <div class="row g-4">
-                <div class="col-12 col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-code fa-2x text-danger mb-3"></i>
-                            <h5 class="card-title fw-bold">Aplicaciones a Medida</h5>
-                            <p class="card-text">Diseñamos interfaces intuitivas y funcionales para experiencias de usuario sobresalientes en sitios web.</p>
-                        </div>
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Todos los Proyectos</button>
+            <button class="filter-btn" data-filter="web">Aplicaciones Web</button>
+            <button class="filter-btn" data-filter="admin">Sistemas Admin</button>
+            <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn" data-filter="custom">Soluciones a Medida</button>
+        </div>
+
+        <section class="portfolio-grid">
+            <div class="portfolio-item" data-category="admin custom">
+                <div class="portfolio-image" data-image-url="img/Admin_Consultorio.png">
+                    <img class="portfolio-thumbnail" src="img/Admin_Consultorio.png" alt="Vista previa del Sistema de Inventario">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-database fa-2x text-danger mb-3"></i>
-                            <h5 class="card-title fw-bold">Sistemas Administrativos</h5>
-                            <p class="card-text">Soluciones para gestionar inventarios, ventas, facturación y control operativo con datos en tiempo real.</p>
-                        </div>
+                <div class="portfolio-content">
+                    <h4>Pagina Web Para Consultorio Médico</h4>
+                    <p>Plataforma completa para gestión de pacientes, citas y facturación en consultorios médicos.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">React</span>
+                        <span class="portfolio-tag">Node.js</span>
+                        <span class="portfolio-tag">MySQL</span>
+                        <span class="portfolio-tag">Dashboard</span>
                     </div>
-                </div>
-
-                <div class="col-12 col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-sync-alt fa-2x text-danger mb-3"></i>
-                            <h5 class="card-title fw-bold">Software de Suscripción Personalizado</h5>
-                            <p class="card-text">Desarrollamos plataformas de suscripción donde tus clientes acceden a herramientas especializadas, paneles de control y automatización de procesos.</p>
-                        </div>
-                    </div>
+                    <a href="#" class="portfolio-link">
+                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
-        </div>
-    </section>
+            <div class="portfolio-item" data-category="admin web">
+                <div class="portfolio-image" data-image-url="img/Admin_Gym.png">
+                    <img class="portfolio-thumbnail" src="img/Admin_Gym.png" alt="Vista previa de la Tienda Online">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h4>Pagina Web para un Gimnasio</h4>
+                    <p>Plataforma para gestión de membresías, reservas de clases y pagos en línea para gimnasios.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">PHP</span>
+                        <span class="portfolio-tag">PayPal</span>
+                        <span class="portfolio-tag">Bootstrap</span>
+                        <span class="portfolio-tag">Responsive</span>
+                    </div>
+                    <a href="#" class="portfolio-link">
+                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
 
+            <div class="portfolio-item" data-category="admin custom">
+                <div class="portfolio-image" data-image-url="img/Admin_Lab.png">
+                    <img class="portfolio-thumbnail" src="img/Admin_Lab.png" alt="Vista previa del Sistema de Facturación">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h4>Pagina Web para un Laboratorio Pecuario</h4>
+                    <p>plataforma para gestión de muestras y resultados para los avicolas de la region</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">SAT</span>
+                        <span class="portfolio-tag">PDF</span>
+                        <span class="portfolio-tag">Angular</span>
+                        <span class="portfolio-tag">API REST</span>
+                    </div>
+                    <a href="#" class="portfolio-link">
+                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="ecommerce web">
+                <div class="portfolio-image" data-image-url="img/Admin_Natural.png">
+                    <img class="portfolio-thumbnail" src="img/Admin_Natural.png" alt="Vista previa de la App de Servicios">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h4>Pagina web para una tienda naturista</h4>
+                    <p>Plataforma de comercio electrónico para la venta de productos naturales y orgánicos.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">PWA</span>
+                        <span class="portfolio-tag">Maps API</span>
+                        <span class="portfolio-tag">WebSocket</span>
+                        <span class="portfolio-tag">Mobile First</span>
+                    </div>
+                    <a href="#" class="portfolio-link">
+                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="admin web">
+                <div class="portfolio-image" data-image-url="img/Admin_Lab2.png">
+                    <img class="portfolio-thumbnail" src="img/Admin_Lab2.png" alt="Vista previa del Dashboard de Analytics">
+                    <div class="portfolio-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h4>Dashboard de Analytics Empresarial</h4>
+                    <p>Panel de control con métricas en tiempo real, gráficos interactivos y reportes automatizados para toma de decisiones.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Chart.js</span>
+                        <span class="portfolio-tag">Real-time</span>
+                        <span class="portfolio-tag">Vue.js</span>
+                        <span class="portfolio-tag">Export PDF</span>
+                    </div>
+                    <a href="#" class="portfolio-link">
+                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-content" id="lightbox-image" src="" alt="Imagen ampliada del proyecto">
+</div>
     <section id="why-us" class="why-us-section">
         <div class="container">
             <h2>¿Por Qué Elegir MB INSUMOS?</h2>
@@ -161,9 +261,11 @@
                     <p><i class="fas fa-phone"></i> (271) 688 95 24</p>
                     <p><i class="fas fa-envelope"></i> ventas.mbinsumos@gmail.com</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/MBInsumos1" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/mb_insumos" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        </div>
+                        <a href="https://www.facebook.com/MBInsumos1" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/mb_insumos" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="contact-form">
                     <h3>Envíanos un Mensaje</h3>
@@ -190,7 +292,10 @@
                 </div>
             </div>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.823023416163!2d-96.89685349408403!3d18.8741187313238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c4efa1e8102811%3A0x47d5bab284afd362!2sMB%20Insumos!5e0!3m2!1ses!2smx!4v1751906036316!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.823023416163!2d-96.89685349408403!3d18.8741187313238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c4efa1e8102811%3A0x47d5bab284afd362!2sMB%20Insumos!5e0!3m2!1ses!2smx!4v1751906036316!5m2!1ses!2smx"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -201,7 +306,8 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/522717158265" class="whatsapp-float" target="_blank" aria-label="Chatea con nosotros por WhatsApp" >
+    <a href="https://wa.me/522717158265" class="whatsapp-float" target="_blank"
+        aria-label="Chatea con nosotros por WhatsApp">
         <span class="whatsapp-label">Comunícate con nosotros</span>
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -209,4 +315,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
+
 </html>

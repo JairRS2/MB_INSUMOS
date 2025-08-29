@@ -647,3 +647,528 @@ footer {
     padding: 20px 0;
     font-size: 0.9em;
 }
+
+
+
+
+   
+
+        /* Hamburger menu */
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-menu .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--white-color);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+               /* Software Portfolio Section - NUEVA SECCIÓN MEJORADA */
+        .software-portfolio {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+        }
+
+        .portfolio-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .portfolio-intro h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-intro p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(226, 30, 47, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay i {
+            font-size: 3em;
+            color: white;
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .portfolio-content p {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-tag {
+            background: #f1f3f4;
+            color: #5f6368;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .portfolio-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            gap: 10px;
+        }
+
+        /* Demo placeholder images */
+        .demo-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            position: relative;
+        }
+
+        .demo-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .demo-image::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 52%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: white;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--secondary-color);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .testimonial-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Why Us Section */
+        .why-us-section .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .why-us-item {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .why-us-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-us-item i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+/* --- ESTILOS PARA LA SECCIÓN DE PORTAFOLIO (para asegurar buena visualización) --- */
+#software-portfolio {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Un color de fondo claro */
+    text-align: center;
+}
+
+#software-portfolio .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.portfolio-intro {
+    margin-bottom: 50px;
+}
+
+.portfolio-intro h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.portfolio-intro p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.portfolio-filter {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* --- ESTILOS PARA EL GRID DEL PORTAFOLIO --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 250px; /* Altura fija para la imagen */
+}
+
+.portfolio-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-thumbnail {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay i {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.portfolio-content {
+    padding: 25px;
+    text-align: left;
+}
+
+.portfolio-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.portfolio-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 70px; /* Asegura un espacio mínimo para la descripción */
+}
+
+.portfolio-tags {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.portfolio-tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.portfolio-link:hover {
+    color: #0056b3;
+}
+
+.portfolio-link i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-link:hover i {
+    transform: translateX(5px);
+}
+
+/* --- ESTILOS CRUCIALES PARA EL LIGHTBOX (MODAL) --- */
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Esto lo fija en la pantalla */
+    z-index: 10000; /* Asegura que esté encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite scroll si la imagen es muy grande */
+    background-color: rgba(0,0,0,0.9); /* Fondo oscuro semi-transparente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    /* Añadimos un pequeño efecto de transición al aparecer */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox.visible {
+    display: flex; /* Muestra el lightbox */
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 90%; /* Ancho máximo de la imagen dentro del modal */
+    max-width: 900px; /* Limita el tamaño para pantallas grandes */
+    max-height: 90vh; /* Limita la altura para no desbordar la ventana */
+    border: 3px solid #fff; /* Borde blanco alrededor de la imagen */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6); /* Sombra para resaltar */
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+/* Animación de zoom para la imagen */
+@keyframes zoom {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10001; /* Asegura que el botón esté encima de la imagen */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD DEL LIGHTBOX --- */
+@media only screen and (max-width: 700px) {
+    .lightbox-content {
+        width: 100%;
+    }
+}
