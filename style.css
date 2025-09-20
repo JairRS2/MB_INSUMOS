@@ -1,108 +1,75 @@
+/* Estilos personalizados para MB INSUMOS */
+
 /* Variables CSS para colores */
 :root {
-    --primary-color: #E21E2F; /* Rojo del logo */
-    --secondary-color: #333333; /* Negro oscuro para texto y fondos */
-    --light-color: #F8F8F8; /* Blanco muy claro para fondos */
-    --text-color: #555555; /* Gris para texto general */
-    --white-color: #FFFFFF;
-    --dark-color: #000000;
+    --primary-color: #E21E2F;
+    --secondary-color: #333333;
+    --light-color: #F8F8F8;
+    --text-color: #555555;
 }
 
-/* Reset básico y estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Fuentes */
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-color);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
 }
 
-h1 { font-size: 3em; }
-h2 { font-size: 2.5em; text-align: center; margin-bottom: 40px;}
-h3 { font-size: 1.8em; }
-
-p {
-    margin-bottom: 15px;
+/* Estilos para el menú hamburguesa - Mobile */
+.main-nav .nav-list {
+    display: none;
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
+@media (max-width: 1023px) {
+    .main-nav .nav-list {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+    
+    .main-nav .nav-list.active {
+        display: flex;
+    }
+    
+    .main-nav .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .main-nav .nav-list li a {
+        padding: 10px 20px;
+        display: block;
+    }
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 12px 25px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
+/* Animación del botón hamburguesa */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.btn:hover {
-    background-color: darken(var(--primary-color), 10%); /* Esto no es CSS nativo, pero es una idea. Usar un color un poco más oscuro */
-    filter: brightness(0.9); /* Alternativa para oscurecer el color */
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
 }
 
-/* Header */
-header {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    height: 60px; /* Ajusta el tamaño del logo */
-    width: auto;
-    border-radius: 10%;
-    position: left;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.main-nav ul li {
-    margin-left: 30px;
-}
-
-.main-nav ul li a {
-    color: var(--white-color);
-    font-weight: 600;
-    padding: 5px 0;
+/* Efectos hover para enlaces de navegación */
+.nav-list a {
     position: relative;
 }
 
-.main-nav ul li a::after {
+.nav-list a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -113,1034 +80,57 @@ header .container {
     transition: width 0.3s ease;
 }
 
-.main-nav ul li a:hover::after {
+.nav-list a:hover::after {
     width: 100%;
 }
 
-/* Hamburger menu para móviles */
-.hamburger-menu {
-    display: none; /* Oculto por defecto en desktop */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--white-color);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background-hero.jpg') no-repeat center center/cover;
-    color: var(--white-color);
-    text-align: center;
-    padding: 100px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-}
-
-.hero-section h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
-    color: var(--white-color);
-}
-
-.hero-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: var(--white-color);
-}
-
-.hero-section p {
-    font-size: 1.2em;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-}
-
-/* Sections generales */
-section {
-    padding: 100px 0;
-    background-color: var(--white-color);
-    margin-bottom: 80px; /* Espacio entre secciones */
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.05); */
-}
-
-section:nth-of-type(even) { /* Para secciones alternas */
-    background-color: var(--light-color);
-}
-
-/* Services Section */
-.services-section .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
-.service-grid {
-    margin-top: 20px;
-}
-
-.service-item {
-    background-color: var(--white-color);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.service-item i {
-    font-size: 3em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.service-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-/* Why Us Section */
-.why-us-section .why-us-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
-.why-us-item {
-    background-color: var(--white-color);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.why-us-item i {
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-/* Estilos para que la sección "¿Por Qué Elegir MB INSUMOS?" muestre 4 tarjetas en una fila */
-.why-us-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 20px;
-}
-
-.why-us-item {
-  background: #fff;
-  padding: 28px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.why-us-item i {
-  font-size: 34px;
-  color: #e53935; /* rojo similar al ejemplo */
-  background: rgba(229,57,53,0.06);
-  padding: 12px;
-  border-radius: 50%;
-}
-
-.why-us-item h3 {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.1;
-}
-
-.why-us-item p {
-  margin: 0;
-  color: #666;
-  max-width: 320px;
-}
-
-/* Responsive: 2 columnas en tablets, 1 en móviles */
-@media (max-width: 1000px) {
-  .why-us-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .why-us-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Contact Section */
-.contact-section {
-    background-color: var(--white-color);
-}
-
-.contact-section .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-    margin-top: 40px;
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.contact-info p i {
-    color: var(--primary-color);
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    display: inline-block;
-    font-size: 1.8em;
-    color: var(--secondary-color);
-    margin-right: 15px;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-.contact-form .form-group {
-    margin-bottom: 20px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button {
-    width: auto;
-    padding: 12px 30px;
-    font-size: 1.1em;
-    border: none;
-    cursor: pointer;
-}
-
-.map-container {
-    margin-top: 50px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.map-container iframe {
-    border-radius: 8px;
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 20px;
-}
-
-/* WhatsApp Floating Button */
-.whatsapp-float {
-    position: fixed; /* Asegura que se mantenga fijo en el viewport */
-    width: 60px;
-    height: 60px;
-    bottom: 40px; /* Distancia desde abajo */
-    right: 55px; /* Distancia desde la derecha */
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50%; /* Cambiado a 50% para un círculo perfecto */
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-
-}
-
-.whatsapp-float:hover {
-    background-color: #1DA851;
-}
-
-/* Estilos para el label/tooltip de WhatsApp */
-.whatsapp-label {
-    visibility: hidden; /* Oculto por defecto */
-    width: 170px; /* Ancho del tooltip */
-    background-color: #555; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute; /* Posiciona el label relativo al .whatsapp-float */
-    z-index: 1;
-    bottom: 100%; /* Posiciona el tooltip encima del botón */
-    left: 40%;
-    transform: translateX(-50%); /* Centra el tooltip horizontalmente */
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s; /* Transición para una aparición suave */
-    font-size: 0.42em; /* Tamaño de fuente más pequeño */
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-    margin-bottom: 10px; /* Espacio entre el tooltip y el botón */
-}
-
-/* Flecha del tooltip */
-.whatsapp-label::after {
-    content: "";
-    position: absolute;
-    top: 100%; /* En la parte inferior del tooltip */
-    left: 50%;
-    margin-left: -5px; /* Ajusta la posición de la flecha */
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-/* Mostrar el tooltip al pasar el ratón por encima del botón */
-.whatsapp-float:hover .whatsapp-label {
-    visibility: visible;
+/* Estilos para el portfolio hover */
+.portfolio-item:hover .portfolio-overlay {
     opacity: 1;
-}
-
-/* Quitar líneas de borde de las tarjetas (cards) */
-.card {
-  border: none !important;
-}
-
-/* Si hay elementos internos con borde, asegurar que también se remueva */
-.card, .card .card-body {
-  border: 0 !important;
-}
-
-/* Quitar la sombra de las tarjetas dentro de la sección #software */
-.software-section .card {
-  box-shadow: none !important;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    h1 { font-size: 2.8em; }
-    h2 { font-size: 2em; }
-    h3 { font-size: 1.6em; }
-
-    .hero-section {
-        padding: 100px 0;
-    }
-
-    .hero-section h1 {
-        font-size: 3em;
-    }
-
-    /* Navegación responsive */
-    .main-nav ul {
-        display: none; /* Oculta la navegación por defecto */
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--dark-color);
-        position: absolute;
-        top: 90px; /* Debajo del header */
-        left: 0;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-    }
-
-    .main-nav ul.active {
-        display: flex; /* Muestra el menú cuando está activo */
-    }
-
-    .main-nav ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .main-nav ul li a {
-        padding: 10px 20px;
-        display: block;
-    }
-
-    .hamburger-menu {
-        display: block; /* Muestra el botón hamburguesa */
-    }
-
-    /* Animación del botón hamburguesa */
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .service-grid, .why-us-grid, .contact-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-    }
-
-    .contact-info, .contact-form {
-        padding: 0 15px;
-    }
-
-    /* WhatsApp button on mobile */
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 25px;
-    }
-
-    /* Ocultar el label en móviles para no saturar la pantalla */
-    .whatsapp-label {
-        display: none; /* Mejor ocultar el tooltip en pantallas pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section h1 {
-        font-size: 2.5em;
-    }
-    .hero-section h2 {
-        font-size: 1.5em;
-    }
-    .hero-section p {
-        font-size: 1em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .hero-section {
-         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') no-repeat center ;
-        min-height: 60vh;
-        background-size: cover;
-        background-position: center center;
-    }
-
-    /* Ajustes adicionales para pantallas muy pequeñas */
-    .service-item, .why-us-item {
-        padding: 10px 15px;
-    }
-
-    /* Mejora el formulario de contacto */
-    .contact-form {
-        padding: 0 10px;
-    }
-}
-
-/* Fondo para Hero Section, puedes reemplazar con una imagen tuya */
-.hero-section {
-    color: #fff; /* Color del texto blanco para contrastar con el fondo */
-    overflow: hidden;
-    /* Puedes usar una imagen de fondo genérica o reemplazarla con una tuya */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('URL_DE_TU_IMAGEN_DE_FONDO.jpg') no-repeat center center/cover; */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalDeskto.svg') no-repeat center center/cover;
-}
-/* Añade esto al final de tu archivo CSS, después de los media queries existentes */
-
-/* Mejoras para la imagen del hero en móviles */
-@media (max-width: 768px) {
-    .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') no-repeat center center/cover;
-        background-attachment: scroll; /* Evita el efecto parallax en móviles */
-        min-height: 70vh; /* Aumenta un poco la altura para mejor visualización */
-        padding: 80px 20px; /* Más padding lateral en móviles */
-    }
-
-    /* Asegura que el contenedor ocupe todo el ancho disponible */
-    .hero-section .container {
-        width: 100%;
-    }
-
-    /* Ajusta el tamaño del logo en el header para móviles */
-    .logo img {
-        height: 50px;
-    }
-
-    /* Mejora el espaciado de las secciones en móviles */
-    section {
-        padding: 80px 0;
-        margin-bottom: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') no-repeat center ;
-        min-height: 60vh;
-        background-size: cover;
-        background-position: center center;
-    }
-
-    /* Ajustes adicionales para pantallas muy pequeñas */
-    .service-item, .why-us-item {
-        padding: 10px 15px;
-    }
-
-    /* Mejora el formulario de contacto */
-    .contact-form {
-        padding: 0 10px;
-    }
-}
-
-/* Asegura que las imágenes sean responsivas */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Mejora el botón hamburguesa para pantallas pequeñas */
-.hamburger-menu {
-    z-index: 1001; /* Asegura que esté por encima de otros elementos */
-}
-
-/* Optimiza el menú desplegable para móviles */
-.main-nav ul {
-    z-index: 1000;
-}
-
-/* Ajusta el footer para móviles */
-footer {
-    padding: 20px 0;
-    font-size: 0.9em;
-}
-
-
-
-
-   
-
-        /* Hamburger menu */
-        .hamburger-menu {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .hamburger-menu .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--white-color);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-               /* Software Portfolio Section - NUEVA SECCIÓN MEJORADA */
-        .software-portfolio {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 100px 0;
-        }
-
-        .portfolio-intro {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .portfolio-intro h2 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .portfolio-intro p {
-            font-size: 1.1em;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        .portfolio-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .portfolio-image {
-            position: relative;
-            overflow: hidden;
-            height: 250px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(226, 30, 47, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay i {
-            font-size: 3em;
-            color: white;
-        }
-
-        .portfolio-content {
-            padding: 25px;
-        }
-
-        .portfolio-content h4 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .portfolio-content p {
-            color: var(--text-color);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .portfolio-tag {
-            background: #f1f3f4;
-            color: #5f6368;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 500;
-        }
-
-        .portfolio-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: gap 0.3s ease;
-        }
-
-        .portfolio-link:hover {
-            gap: 10px;
-        }
-
-        /* Demo placeholder images */
-        .demo-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2em;
-            text-align: center;
-            position: relative;
-        }
-
-        .demo-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .demo-image::after {
-            content: '▶';
-            position: absolute;
-            top: 50%;
-            left: 52%;
-            transform: translate(-50%, -50%);
-            font-size: 1.5em;
-            color: white;
-        }
-
-        /* Testimonials */
-        .testimonials-section {
-            background: var(--secondary-color);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .testimonial-item {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            margin: 20px 0;
-        }
-
-        .testimonial-item p {
-            font-style: italic;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-
-        .client-name {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        /* Why Us Section */
-        .why-us-section .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .why-us-item {
-            background-color: var(--white-color);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .why-us-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .why-us-item i {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-/* --- ESTILOS PARA LA SECCIÓN DE PORTAFOLIO (para asegurar buena visualización) --- */
-#software-portfolio {
-    padding: 80px 0;
-    background-color: #f8f9fa; /* Un color de fondo claro */
-    text-align: center;
-}
-
-#software-portfolio .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.portfolio-intro {
-    margin-bottom: 50px;
-}
-
-.portfolio-intro h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.portfolio-intro p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.portfolio-filter {
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.filter-btn {
-    background-color: #e9ecef;
-    color: #495057;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-.filter-btn.active {
-    background-color: #007bff;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
-
-/* --- ESTILOS PARA EL GRID DEL PORTAFOLIO --- */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.portfolio-item {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.portfolio-image {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    height: 250px; /* Altura fija para la imagen */
-}
-
-.portfolio-thumbnail {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
-    display: block;
-    transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-thumbnail {
     transform: scale(1.05);
 }
 
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 123, 255, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
-}
-
-.portfolio-overlay i {
-    color: #fff;
-    font-size: 2.5rem;
-}
-
-.portfolio-content {
-    padding: 25px;
-    text-align: left;
-}
-
-.portfolio-content h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.portfolio-content p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    min-height: 70px; /* Asegura un espacio mínimo para la descripción */
-}
-
-.portfolio-tags {
-    margin-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.portfolio-tag {
-    background-color: #e9ecef;
-    color: #495057;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.portfolio-link {
-    display: inline-flex;
-    align-items: center;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.portfolio-link:hover {
-    color: #0056b3;
-}
-
-.portfolio-link i {
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-}
-
 .portfolio-link:hover i {
     transform: translateX(5px);
 }
 
-/* --- ESTILOS CRUCIALES PARA EL LIGHTBOX (MODAL) --- */
+/* Estilos para el lightbox */
 .lightbox {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Esto lo fija en la pantalla */
-    z-index: 10000; /* Asegura que esté encima de todo */
+    display: none;
+    position: fixed;
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Permite scroll si la imagen es muy grande */
-    background-color: rgba(0,0,0,0.9); /* Fondo oscuro semi-transparente */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    /* Añadimos un pequeño efecto de transición al aparecer */
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
 .lightbox.visible {
-    display: flex; /* Muestra el lightbox */
+    display: flex !important;
     opacity: 1;
 }
 
 .lightbox-content {
     margin: auto;
     display: block;
-    width: 90%; /* Ancho máximo de la imagen dentro del modal */
-    max-width: 900px; /* Limita el tamaño para pantallas grandes */
-    max-height: 90vh; /* Limita la altura para no desbordar la ventana */
-    border: 3px solid #fff; /* Borde blanco alrededor de la imagen */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.6); /* Sombra para resaltar */
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
     animation-name: zoom;
     animation-duration: 0.4s;
 }
 
-/* Animación de zoom para la imagen */
 @keyframes zoom {
     from {transform: scale(0.7);}
     to {transform: scale(1);}
@@ -1156,7 +146,7 @@ footer {
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
-    z-index: 10001; /* Asegura que el botón esté encima de la imagen */
+    z-index: 10001;
 }
 
 .close-btn:hover,
@@ -1166,9 +156,56 @@ footer {
     cursor: pointer;
 }
 
-/* --- MEDIA QUERIES PARA RESPONSIVIDAD DEL LIGHTBOX --- */
-@media only screen and (max-width: 700px) {
-    .lightbox-content {
-        width: 100%;
+/* Tooltip del WhatsApp */
+.whatsapp-float:hover .whatsapp-label {
+    visibility: visible;
+    opacity: 1;
+}
+
+.whatsapp-label::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Filtros del portfolio activos */
+.filter-btn.active {
+    background-color: #dc2626 !important; /* red-600 */
+    color: white !important;
+}
+
+/* Background responsive para hero */
+@media (max-width: 768px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') !important;
+        background-attachment: scroll;
+        min-height: 70vh;
+        padding: 80px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalMobil.svg') !important;
+        min-height: 60vh;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-section p {
+        font-size: 1rem !important;
     }
 }

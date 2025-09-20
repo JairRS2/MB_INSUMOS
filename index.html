@@ -5,211 +5,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB INSUMOS - Soporte y Mantenimiento de Impresoras, Reparación Electrónica y Proveduría</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="LOGO.ico">
-    <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body>
-    <header>
-        <div class="container">
+<body class="font-sans text-gray-600 bg-gray-50">
+    <header class="bg-black text-white py-4 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-5 flex justify-between items-center">
             <div class="logo">
-                <img src="img/LOGO.jpg" alt="MB INSUMOS Logo">
+                <img src="img/LOGO.jpg" alt="MB INSUMOS Logo" class="h-16 w-auto rounded-lg">
             </div>
             <nav class="main-nav">
-                <button class="hamburger-menu" aria-label="Abrir menú de navegación">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <button class="hamburger-menu lg:hidden bg-transparent border-0 cursor-pointer p-2" aria-label="Abrir menú de navegación">
+                    <span class="bar block w-6 h-0.5 bg-white my-1 transition-all duration-300"></span>
+                    <span class="bar block w-6 h-0.5 bg-white my-1 transition-all duration-300"></span>
+                    <span class="bar block w-6 h-0.5 bg-white my-1 transition-all duration-300"></span>
                 </button>
-                <ul class="nav-list">
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#software-portfolio">Portfolio Software</a></li>
-                    <li><a href="#why-us">¿Por qué Elegirnos?</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                <ul class="nav-list hidden lg:flex list-none">
+                    <li class="ml-8"><a href="#hero" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Inicio</a></li>
+                    <li class="ml-8"><a href="#services" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Servicios</a></li>
+                    <li class="ml-8"><a href="#software-portfolio" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Portfolio Software</a></li>
+                    <li class="ml-8"><a href="#why-us" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">¿Por qué Elegirnos?</a></li>
+                    <li class="ml-8"><a href="#contact" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero" class="hero-section">
-        <div class="container">
-            <h1>MB INSUMOS</h1>
-            <h2>Soluciones Integrales en Tecnología y Desarrollo</h2>
-            <p>Tu aliado confiable para el soporte técnico, reparación de equipos y desarrollo de software
+    <section id="hero" class="hero-section bg-cover bg-center bg-no-repeat text-white text-center py-24 flex items-center justify-center min-h-[60vh] relative" 
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalDeskto.svg');">
+        <div class="max-w-6xl mx-auto px-5">
+            <h1 class="font-bold text-6xl mb-3 text-white">MB INSUMOS</h1>
+            <h2 class="font-bold text-4xl mb-5 text-white">Soluciones Integrales en Tecnología y Desarrollo</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Tu aliado confiable para el soporte técnico, reparación de equipos y desarrollo de software
                 personalizado.</p>
-            <a href="#contact" class="btn">¡Descubre Nuestras Soluciones!</a>
+            <a href="#contact" class="inline-block bg-red-600 text-white py-3 px-6 rounded-md transition-all duration-300 hover:bg-red-700">¡Descubre Nuestras Soluciones!</a>
         </div>
     </section>
 
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <i class="fas fa-print"></i>
-                    <h3>Soporte y Mantenimiento de Impresoras</h3>
-                    <p>Mantenimiento preventivo y correctivo, reparación de impresoras de todas las marcas y modelos.
-                    </p>
+    <section id="services" class="py-20 bg-white mb-20">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="font-bold text-4xl text-center text-gray-800 mb-10">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fas fa-print text-5xl text-red-600 mb-5"></i>
+                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Soporte y Mantenimiento de Impresoras</h3>
+                    <p class="mb-4">Mantenimiento preventivo y correctivo, reparación de impresoras de todas las marcas y modelos.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Reparación de Laptops y PCs</h3>
-                    <p>Diagnóstico y reparación de hardware, software, optimización y recuperación de datos.</p>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fas fa-laptop text-5xl text-red-600 mb-5"></i>
+                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Reparación de Laptops y PCs</h3>
+                    <p class="mb-4">Diagnóstico y reparación de hardware, software, optimización y recuperación de datos.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Reparación de Celulares y Tablets</h3>
-                    <p>Arreglo de pantallas, baterías, conectores de carga y solución de problemas de software.</p>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fas fa-mobile-alt text-5xl text-red-600 mb-5"></i>
+                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Reparación de Celulares y Tablets</h3>
+                    <p class="mb-4">Arreglo de pantallas, baterías, conectores de carga y solución de problemas de software.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-code"></i>
-                    <h3>Desarrollo de Software</h3>
-                    <p>Aplicaciones web, sistemas administrativos y plataformas personalizadas para tu negocio.</p>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fas fa-code text-5xl text-red-600 mb-5"></i>
+                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Desarrollo de Software</h3>
+                    <p class="mb-4">Aplicaciones web, sistemas administrativos y plataformas personalizadas para tu negocio.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-boxes"></i>
-                    <h3>Proveeduría de Insumos</h3>
-                    <p>Distribución de tóner, cartuchos de tinta, refacciones y accesorios para impresoras.</p>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fas fa-boxes text-5xl text-red-600 mb-5"></i>
+                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Proveeduría de Insumos</h3>
+                    <p class="mb-4">Distribución de tóner, cartuchos de tinta, refacciones y accesorios para impresoras.</p>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-truck-moving"></i>
-                    <h3>Envío a Domicilio</h3>
-                    <p>Llevamos nuestros productos y servicios a tu ubicación en Córdoba, Fortín y Amatlán.</p>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fas fa-truck-moving text-5xl text-red-600 mb-5"></i>
+                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Envío a Domicilio</h3>
+                    <p class="mb-4">Llevamos nuestros productos y servicios a tu ubicación en Córdoba, Fortín y Amatlán.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- NUEVA SECCIÓN DE PORTFOLIO DE SOFTWARE -->
-<section id="software-portfolio" class="software-portfolio">
-    <div class="container">
-        <div class="portfolio-intro">
-            <h2>Portfolio de Desarrollo de Software</h2>
-            <p>Descubre cómo transformamos ideas en soluciones digitales innovadoras. Cada proyecto es diseñado a medida para impulsar el crecimiento de nuestros clientes.</p>
+<section id="software-portfolio" class="py-20 bg-gradient-to-br from-gray-50 to-blue-100">
+    <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center mb-15">
+            <h2 class="font-bold text-4xl text-gray-800 mb-5">Portfolio de Desarrollo de Software</h2>
+            <p class="text-lg max-w-4xl mx-auto text-gray-600">Descubre cómo transformamos ideas en soluciones digitales innovadoras. Cada proyecto es diseñado a medida para impulsar el crecimiento de nuestros clientes.</p>
         </div>
 
-        <div class="portfolio-filter">
-            <button class="filter-btn active" data-filter="all">Todos los Proyectos</button>
-            <button class="filter-btn" data-filter="web">Aplicaciones Web</button>
-            <button class="filter-btn" data-filter="admin">Sistemas Admin</button>
-            <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-            <button class="filter-btn" data-filter="custom">Soluciones a Medida</button>
+        <div class="flex justify-center mb-12 flex-wrap gap-4">
+            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white active" data-filter="all">Todos los Proyectos</button>
+            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="web">Aplicaciones Web</button>
+            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="admin">Sistemas Admin</button>
+            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="custom">Soluciones a Medida</button>
         </div>
 
-        <section class="portfolio-grid">
-            <div class="portfolio-item" data-category="admin custom">
-                <div class="portfolio-image" data-image-url="img/Admin_Consultorio.png">
-                    <img class="portfolio-thumbnail" src="img/Admin_Consultorio.png" alt="Vista previa del Sistema de Inventario">
-                    <div class="portfolio-overlay">
-                        <i class="fas fa-search-plus"></i>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin custom">
+                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Consultorio.png">
+                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Consultorio.png" alt="Vista previa del Sistema de Inventario">
+                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-4xl"></i>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h4>Pagina Web Para Consultorio Médico</h4>
-                    <p>Plataforma completa para gestión de pacientes, citas y facturación en consultorios médicos.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">React</span>
-                        <span class="portfolio-tag">Node.js</span>
-                        <span class="portfolio-tag">MySQL</span>
-                        <span class="portfolio-tag">Dashboard</span>
+                <div class="portfolio-content p-6 text-left">
+                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina Web Para Consultorio Médico</h4>
+                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Plataforma completa para gestión de pacientes, citas y facturación en consultorios médicos.</p>
+                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">React</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Node.js</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">MySQL</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Dashboard</span>
                     </div>
-                    <a href="#" class="portfolio-link">
-                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
+                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="admin web">
-                <div class="portfolio-image" data-image-url="img/Admin_Gym.png">
-                    <img class="portfolio-thumbnail" src="img/Admin_Gym.png" alt="Vista previa de la Tienda Online">
-                    <div class="portfolio-overlay">
-                        <i class="fas fa-search-plus"></i>
+            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin web">
+                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Gym.png">
+                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Gym.png" alt="Vista previa de la Tienda Online">
+                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-4xl"></i>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h4>Pagina Web para un Gimnasio</h4>
-                    <p>Plataforma para gestión de membresías, reservas de clases y pagos en línea para gimnasios.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">PHP</span>
-                        <span class="portfolio-tag">PayPal</span>
-                        <span class="portfolio-tag">Bootstrap</span>
-                        <span class="portfolio-tag">Responsive</span>
+                <div class="portfolio-content p-6 text-left">
+                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina Web para un Gimnasio</h4>
+                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Plataforma para gestión de membresías, reservas de clases y pagos en línea para gimnasios.</p>
+                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PHP</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PayPal</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Bootstrap</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Responsive</span>
                     </div>
-                    <a href="#" class="portfolio-link">
-                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
+                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="admin custom">
-                <div class="portfolio-image" data-image-url="img/Admin_Lab.png">
-                    <img class="portfolio-thumbnail" src="img/Admin_Lab.png" alt="Vista previa del Sistema de Facturación">
-                    <div class="portfolio-overlay">
-                        <i class="fas fa-search-plus"></i>
+            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin custom">
+                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Lab.png">
+                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Lab.png" alt="Vista previa del Sistema de Facturación">
+                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-4xl"></i>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h4>Pagina Web para un Laboratorio Pecuario</h4>
-                    <p>plataforma para gestión de muestras y resultados para los avicolas de la region</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">SAT</span>
-                        <span class="portfolio-tag">PDF</span>
-                        <span class="portfolio-tag">Angular</span>
-                        <span class="portfolio-tag">API REST</span>
+                <div class="portfolio-content p-6 text-left">
+                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina Web para un Laboratorio Pecuario</h4>
+                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">plataforma para gestión de muestras y resultados para los avicolas de la region</p>
+                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">SAT</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PDF</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Angular</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">API REST</span>
                     </div>
-                    <a href="#" class="portfolio-link">
-                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
+                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="ecommerce web">
-                <div class="portfolio-image" data-image-url="img/Admin_Natural.png">
-                    <img class="portfolio-thumbnail" src="img/Admin_Natural.png" alt="Vista previa de la App de Servicios">
-                    <div class="portfolio-overlay">
-                        <i class="fas fa-search-plus"></i>
+            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="ecommerce web">
+                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Natural.png">
+                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Natural.png" alt="Vista previa de la App de Servicios">
+                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-4xl"></i>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h4>Pagina web para una tienda naturista</h4>
-                    <p>Plataforma de comercio electrónico para la venta de productos naturales y orgánicos.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">PWA</span>
-                        <span class="portfolio-tag">Maps API</span>
-                        <span class="portfolio-tag">WebSocket</span>
-                        <span class="portfolio-tag">Mobile First</span>
+                <div class="portfolio-content p-6 text-left">
+                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina web para una tienda naturista</h4>
+                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Plataforma de comercio electrónico para la venta de productos naturales y orgánicos.</p>
+                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PWA</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Maps API</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">WebSocket</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Mobile First</span>
                     </div>
-                    <a href="#" class="portfolio-link">
-                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
+                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="admin web">
-                <div class="portfolio-image" data-image-url="img/Admin_Lab2.png">
-                    <img class="portfolio-thumbnail" src="img/Admin_Lab2.png" alt="Vista previa del Dashboard de Analytics">
-                    <div class="portfolio-overlay">
-                        <i class="fas fa-search-plus"></i>
+            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin web">
+                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Lab2.png">
+                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Lab2.png" alt="Vista previa del Dashboard de Analytics">
+                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-4xl"></i>
                     </div>
                 </div>
-                <div class="portfolio-content">
-                    <h4>Dashboard de Analytics Empresarial</h4>
-                    <p>Panel de control con métricas en tiempo real, gráficos interactivos y reportes automatizados para toma de decisiones.</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">Chart.js</span>
-                        <span class="portfolio-tag">Real-time</span>
-                        <span class="portfolio-tag">Vue.js</span>
-                        <span class="portfolio-tag">Export PDF</span>
+                <div class="portfolio-content p-6 text-left">
+                    <h4 class="font-bold text-xl text-gray-800 mb-2">Dashboard de Analytics Empresarial</h4>
+                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Panel de control con métricas en tiempo real, gráficos interactivos y reportes automatizados para toma de decisiones.</p>
+                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Chart.js</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Real-time</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Vue.js</span>
+                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Export PDF</span>
                     </div>
-                    <a href="#" class="portfolio-link">
-                        Vista Previa <i class="fas fa-arrow-right"></i>
+                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
+                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
@@ -217,102 +216,99 @@
     </div>
 </section>
 
-<div id="lightbox" class="lightbox">
-    <span class="close-btn">&times;</span>
-    <img class="lightbox-content" id="lightbox-image" src="" alt="Imagen ampliada del proyecto">
+<div id="lightbox" class="lightbox fixed z-[10000] left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-90 justify-center items-center opacity-0 transition-opacity duration-300 hidden">
+    <span class="close-btn absolute top-5 right-9 text-gray-200 text-4xl font-bold transition-colors duration-300 cursor-pointer z-[10001] hover:text-gray-400">&times;</span>
+    <img class="lightbox-content m-auto block w-[90%] max-w-4xl max-h-[90vh] border-4 border-white shadow-2xl rounded-lg" id="lightbox-image" src="" alt="Imagen ampliada del proyecto">
 </div>
-    <section id="why-us" class="why-us-section">
-        <div class="container">
-            <h2>¿Por Qué Elegir MB INSUMOS?</h2>
-            <div class="why-us-grid">
-                <div class="why-us-item">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Experiencia y Confianza</h3>
-                    <p>Más de 5 años de experiencia brindando soluciones tecnológicas.</p>
+    <section id="why-us" class="py-20 bg-light">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="font-bold text-4xl text-center text-gray-800 mb-10">¿Por Qué Elegir MB INSUMOS?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
+                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
+                    <i class="fas fa-handshake text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
+                    <h3 class="font-bold text-xl text-gray-800 mb-0">Experiencia y Confianza</h3>
+                    <p class="text-gray-600 max-w-xs mb-0">Más de 5 años de experiencia brindando soluciones tecnológicas.</p>
                 </div>
-                <div class="why-us-item">
-                    <i class="fas fa-screwdriver-wrench"></i>
-                    <h3>Técnicos Certificados</h3>
-                    <p>Personal altamente capacitado para garantizar un servicio de calidad.</p>
+                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
+                    <i class="fas fa-screwdriver-wrench text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
+                    <h3 class="font-bold text-xl text-gray-800 mb-0">Técnicos Certificados</h3>
+                    <p class="text-gray-600 max-w-xs mb-0">Personal altamente capacitado para garantizar un servicio de calidad.</p>
                 </div>
-                <div class="why-us-item">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Garantía de Satisfacción</h3>
-                    <p>Nos comprometemos con resultados efectivos y duraderos.</p>
+                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
+                    <i class="fas fa-clipboard-check text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
+                    <h3 class="font-bold text-xl text-gray-800 mb-0">Garantía de Satisfacción</h3>
+                    <p class="text-gray-600 max-w-xs mb-0">Nos comprometemos con resultados efectivos y duraderos.</p>
                 </div>
-                <div class="why-us-item">
-                    <i class="fas fa-truck-fast"></i>
-                    <h3>Rapidez y Eficiencia</h3>
-                    <p>Entregas y servicios oportunos para minimizar tus tiempos de inactividad.</p>
+                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
+                    <i class="fas fa-truck-fast text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
+                    <h3 class="font-bold text-xl text-gray-800 mb-0">Rapidez y Eficiencia</h3>
+                    <p class="text-gray-600 max-w-xs mb-0">Entregas y servicios oportunos para minimizar tus tiempos de inactividad.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contáctanos</h2>
-            <p>¡Estamos listos para ayudarte! Llámanos, envíanos un correo o visita nuestras instalaciones.</p>
-            <div class="contact-grid">
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="font-bold text-4xl text-center text-gray-800 mb-5">Contáctanos</h2>
+            <p class="text-center text-lg mb-10">¡Estamos listos para ayudarte! Llámanos, envíanos un correo o visita nuestras instalaciones.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
                 <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Av. 1, Colonia Cuauhtémoc, Córdoba, Veracruz, México</p>
-                    <p><i class="fas fa-phone"></i> (271) 715 82 65</p>
-                    <p><i class="fas fa-phone"></i> (271) 688 95 24</p>
-                    <p><i class="fas fa-envelope"></i> ventas.mbinsumos@gmail.com</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/MBInsumos1" target="_blank" aria-label="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/mb_insumos" target="_blank" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
+                    <h3 class="font-bold text-2xl text-gray-800 mb-6">Información de Contacto</h3>
+                    <p class="mb-3 flex items-center"><i class="fas fa-map-marker-alt text-red-600 mr-3 text-xl"></i> Av. 1, Colonia Cuauhtémoc, Córdoba, Veracruz, México</p>
+                    <p class="mb-3 flex items-center"><i class="fas fa-phone text-red-600 mr-3 text-xl"></i> (271) 715 82 65</p>
+                    <p class="mb-3 flex items-center"><i class="fas fa-phone text-red-600 mr-3 text-xl"></i> (271) 688 95 24</p>
+                    <p class="mb-6 flex items-center"><i class="fas fa-envelope text-red-600 mr-3 text-xl"></i> ventas.mbinsumos@gmail.com</p>
+                    <div class="social-links mt-5">
+                        <a href="https://www.facebook.com/MBInsumos1" target="_blank" aria-label="Facebook" class="inline-block text-3xl text-gray-800 mr-4 hover:text-red-600 transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/mb_insumos" target="_blank" aria-label="Instagram" class="inline-block text-3xl text-gray-800 hover:text-red-600 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Envíanos un Mensaje</h3>
+                    <h3 class="font-bold text-2xl text-gray-800 mb-6">Envíanos un Mensaje</h3>
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre Completo:</label>
-                            <input type="text" id="name" name="name" required>
+                        <div class="form-group mb-5">
+                            <label for="name" class="block mb-2 font-semibold">Nombre Completo:</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-md text-base">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico:</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="form-group mb-5">
+                            <label for="email" class="block mb-2 font-semibold">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-md text-base">
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono (Opcional):</label>
-                            <input type="tel" id="phone" name="phone">
+                        <div class="form-group mb-5">
+                            <label for="phone" class="block mb-2 font-semibold">Teléfono (Opcional):</label>
+                            <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-md text-base">
                         </div>
-                        <div class="form-group">
-                            <label for="message">Tu Mensaje:</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                        <div class="form-group mb-5">
+                            <label for="message" class="block mb-2 font-semibold">Tu Mensaje:</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full p-3 border border-gray-300 rounded-md text-base resize-y"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                        <div id="formMessage" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+                        <button type="submit" class="bg-red-600 text-white py-3 px-8 text-lg border-0 cursor-pointer rounded-md hover:bg-red-700 transition-all duration-300">Enviar Mensaje</button>
+                        <div id="formMessage" class="mt-4 text-center font-bold"></div>
                     </form>
                 </div>
             </div>
-            <div class="map-container">
+            <div class="map-container mt-12 rounded-lg overflow-hidden shadow-lg">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.823023416163!2d-96.89685349408403!3d18.8741187313238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c4efa1e8102811%3A0x47d5bab284afd362!2sMB%20Insumos!5e0!3m2!1ses!2smx!4v1751906036316!5m2!1ses!2smx"
                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 MB INSUMOS. Todos los derechos reservados.</p>
+    <footer class="bg-black text-white text-center py-6 mt-5">
+        <div class="max-w-6xl mx-auto px-5">
+            <p class="mb-0">© 2025 MB INSUMOS. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/522717158265" class="whatsapp-float" target="_blank"
+    <a href="https://wa.me/522717158265" class="whatsapp-float fixed w-15 h-15 bottom-10 right-14 bg-green-500 text-white rounded-full text-center text-3xl shadow-lg z-50 flex items-center justify-center transition-colors duration-300 hover:bg-green-600" target="_blank"
         aria-label="Chatea con nosotros por WhatsApp">
-        <span class="whatsapp-label">Comunícate con nosotros</span>
+        <span class="whatsapp-label absolute invisible w-44 bg-gray-600 text-white text-center rounded-md py-2 bottom-full left-1/2 transform -translate-x-1/2 opacity-0 transition-all duration-300 text-sm whitespace-nowrap mb-2">Comunícate con nosotros</span>
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 
