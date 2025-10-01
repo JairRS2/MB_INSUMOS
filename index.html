@@ -1,315 +1,533 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MB INSUMOS - Soporte y Mantenimiento de Impresoras, Reparación Electrónica y Proveduría</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="LOGO.ico">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MB INSUMOS – Soporte, Mantenimiento y Desarrollo</title>
+  <link rel="icon" type="image/png" href="LOGO.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#e11d48',
+              50:'#fff1f2',100:'#ffe4e6',200:'#fecdd3',300:'#fda4af',400:'#fb7185',500:'#f43f5e',600:'#e11d48',700:'#be123c',800:'#9f1239',900:'#881337'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px -10px rgba(225,29,72,.35)',
+            lift: '0 10px 20px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)'
+          },
+          backgroundImage: {
+            'hero-grid': "radial-gradient(circle at 1px 1px, rgb(255 255 255 / .15) 1px, transparent 0)",
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .font-display { font-family: 'Montserrat', system-ui, sans-serif; }
+    .font-body { font-family: 'Poppins', system-ui, sans-serif; }
+    .fade-in { animation: fade-in .6s ease-out both; }
+    @keyframes fade-in { from {opacity:0; transform: translateY(6px)} to {opacity:1; transform: translateY(0)} }
+    .backdrop-blur-8 { backdrop-filter: blur(8px); }
+  </style>
 </head>
-
-<body class="font-sans text-gray-600 bg-gray-50">
-    <header class="bg-black text-white py-4 sticky top-0 z-50 shadow-lg">
-        <div class="max-w-6xl mx-auto px-5 flex justify-between items-center">
-            <div class="logo">
-                <img src="img/LOGO.jpg" alt="MB INSUMOS Logo" class="h-16 w-auto rounded-lg">
-            </div>
-            <nav class="main-nav">
-                <button class="hamburger-menu lg:hidden bg-transparent border-0 cursor-pointer p-2" aria-label="Abrir menú de navegación">
-                    <span class="bar block w-6 h-0.5 bg-white my-1 transition-all duration-300"></span>
-                    <span class="bar block w-6 h-0.5 bg-white my-1 transition-all duration-300"></span>
-                    <span class="bar block w-6 h-0.5 bg-white my-1 transition-all duration-300"></span>
-                </button>
-                <ul class="nav-list hidden lg:flex list-none">
-                    <li class="ml-8"><a href="#hero" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Inicio</a></li>
-                    <li class="ml-8"><a href="#services" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Servicios</a></li>
-                    <li class="ml-8"><a href="#software-portfolio" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Portfolio Software</a></li>
-                    <li class="ml-8"><a href="#why-us" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">¿Por qué Elegirnos?</a></li>
-                    <li class="ml-8"><a href="#contact" class="text-white font-semibold py-1 relative hover:text-red-500 transition-colors duration-300">Contacto</a></li>
-                </ul>
-            </nav>
+<body class="font-body text-gray-700 bg-gray-50 dark:bg-zinc-950 dark:text-zinc-300">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/80 dark:bg-zinc-950/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3">
+          <img src="img/LOGO.jpg" alt="MB INSUMOS" class="h-10 w-10 rounded-lg object-cover ring-1 ring-white/20" />
+          <span class="font-display text-white text-lg tracking-wide">MB INSUMOS</span>
+        </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#hero" class="text-sm font-semibold text-white/90 hover:text-white">Inicio</a>
+          <a href="#services" class="text-sm font-semibold text-white/90 hover:text-white">Servicios</a>
+          <a href="#software-portfolio" class="text-sm font-semibold text-white/90 hover:text-white">Portfolio Software</a>
+          <a href="#why-us" class="text-sm font-semibold text-white/90 hover:text-white">¿Por qué elegirnos?</a>
+          <a href="#faq" class="text-sm font-semibold text-white/90 hover:text-white">FAQ</a>
+          <a href="#contact" class="text-sm font-semibold text-white/90 hover:text-white">Contacto</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <!-- Darkmode toggle -->
+          <button id="themeToggle" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-sm text-white/90 hover:bg-white/10" aria-label="Cambiar tema">
+            <i class="fa-solid fa-moon"></i><span class="hidden md:inline">Oscuro</span>
+          </button>
+          <!-- Mobile menu button -->
+          <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 focus:outline-none" aria-label="Abrir menú">
+            <svg id="menuIcon" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="closeIcon" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
         </div>
-    </header>
-
-    <section id="hero" class="hero-section bg-cover bg-center bg-no-repeat text-white text-center py-24 flex items-center justify-center min-h-[60vh] relative" 
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/FinalDeskto.svg');">
-        <div class="max-w-6xl mx-auto px-5">
-            <h1 class="font-bold text-6xl mb-3 text-white">MB INSUMOS</h1>
-            <h2 class="font-bold text-4xl mb-5 text-white">Soluciones Integrales en Tecnología y Desarrollo</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-8">Tu aliado confiable para el soporte técnico, reparación de equipos y desarrollo de software
-                personalizado.</p>
-            <a href="#contact" class="inline-block bg-red-600 text-white py-3 px-6 rounded-md transition-all duration-300 hover:bg-red-700">¡Descubre Nuestras Soluciones!</a>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 bg-white mb-20">
-        <div class="max-w-6xl mx-auto px-5">
-            <h2 class="font-bold text-4xl text-center text-gray-800 mb-10">Nuestros Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-5">
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
-                    <i class="fas fa-print text-5xl text-red-600 mb-5"></i>
-                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Soporte y Mantenimiento de Impresoras</h3>
-                    <p class="mb-4">Mantenimiento preventivo y correctivo, reparación de impresoras de todas las marcas y modelos.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
-                    <i class="fas fa-laptop text-5xl text-red-600 mb-5"></i>
-                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Reparación de Laptops y PCs</h3>
-                    <p class="mb-4">Diagnóstico y reparación de hardware, software, optimización y recuperación de datos.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
-                    <i class="fas fa-mobile-alt text-5xl text-red-600 mb-5"></i>
-                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Reparación de Celulares y Tablets</h3>
-                    <p class="mb-4">Arreglo de pantallas, baterías, conectores de carga y solución de problemas de software.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
-                    <i class="fas fa-code text-5xl text-red-600 mb-5"></i>
-                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Desarrollo de Software</h3>
-                    <p class="mb-4">Aplicaciones web, sistemas administrativos y plataformas personalizadas para tu negocio.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
-                    <i class="fas fa-boxes text-5xl text-red-600 mb-5"></i>
-                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Proveeduría de Insumos</h3>
-                    <p class="mb-4">Distribución de tóner, cartuchos de tinta, refacciones y accesorios para impresoras.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
-                    <i class="fas fa-truck-moving text-5xl text-red-600 mb-5"></i>
-                    <h3 class="font-bold text-2xl mb-3 text-gray-800">Envío a Domicilio</h3>
-                    <p class="mb-4">Llevamos nuestros productos y servicios a tu ubicación en Córdoba, Fortín y Amatlán.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NUEVA SECCIÓN DE PORTFOLIO DE SOFTWARE -->
-<section id="software-portfolio" class="py-20 bg-gradient-to-br from-gray-50 to-blue-100">
-    <div class="max-w-6xl mx-auto px-5">
-        <div class="text-center mb-15">
-            <h2 class="font-bold text-4xl text-gray-800 mb-5">Portfolio de Desarrollo de Software</h2>
-            <p class="text-lg max-w-4xl mx-auto text-gray-600">Descubre cómo transformamos ideas en soluciones digitales innovadoras. Cada proyecto es diseñado a medida para impulsar el crecimiento de nuestros clientes.</p>
-        </div>
-
-        <div class="flex justify-center mb-12 flex-wrap gap-4">
-            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white active" data-filter="all">Todos los Proyectos</button>
-            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="web">Aplicaciones Web</button>
-            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="admin">Sistemas Admin</button>
-            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="ecommerce">E-commerce</button>
-            <button class="filter-btn bg-transparent border-2 border-red-600 text-red-600 py-2 px-6 rounded-full cursor-pointer transition-all duration-300 font-semibold hover:bg-red-600 hover:text-white" data-filter="custom">Soluciones a Medida</button>
-        </div>
-
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin custom">
-                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Consultorio.png">
-                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Consultorio.png" alt="Vista previa del Sistema de Inventario">
-                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-4xl"></i>
-                    </div>
-                </div>
-                <div class="portfolio-content p-6 text-left">
-                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina Web Para Consultorio Médico</h4>
-                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Plataforma completa para gestión de pacientes, citas y facturación en consultorios médicos.</p>
-                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">React</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Node.js</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">MySQL</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Dashboard</span>
-                    </div>
-                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
-                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin web">
-                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Gym.png">
-                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Gym.png" alt="Vista previa de la Tienda Online">
-                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-4xl"></i>
-                    </div>
-                </div>
-                <div class="portfolio-content p-6 text-left">
-                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina Web para un Gimnasio</h4>
-                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Plataforma para gestión de membresías, reservas de clases y pagos en línea para gimnasios.</p>
-                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PHP</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PayPal</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Bootstrap</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Responsive</span>
-                    </div>
-                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
-                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin custom">
-                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Lab.png">
-                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Lab.png" alt="Vista previa del Sistema de Facturación">
-                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-4xl"></i>
-                    </div>
-                </div>
-                <div class="portfolio-content p-6 text-left">
-                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina Web para un Laboratorio Pecuario</h4>
-                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">plataforma para gestión de muestras y resultados para los avicolas de la region</p>
-                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">SAT</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PDF</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Angular</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">API REST</span>
-                    </div>
-                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
-                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="ecommerce web">
-                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Natural.png">
-                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Natural.png" alt="Vista previa de la App de Servicios">
-                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-4xl"></i>
-                    </div>
-                </div>
-                <div class="portfolio-content p-6 text-left">
-                    <h4 class="font-bold text-xl text-gray-800 mb-2">Pagina web para una tienda naturista</h4>
-                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Plataforma de comercio electrónico para la venta de productos naturales y orgánicos.</p>
-                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">PWA</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Maps API</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">WebSocket</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Mobile First</span>
-                    </div>
-                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
-                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="portfolio-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-category="admin web">
-                <div class="portfolio-image relative overflow-hidden h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center cursor-pointer" data-image-url="img/Admin_Lab2.png">
-                    <img class="portfolio-thumbnail w-full h-full object-cover block transition-transform duration-300" src="img/Admin_Lab2.png" alt="Vista previa del Dashboard de Analytics">
-                    <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-blue-500 bg-opacity-70 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                        <i class="fas fa-search-plus text-white text-4xl"></i>
-                    </div>
-                </div>
-                <div class="portfolio-content p-6 text-left">
-                    <h4 class="font-bold text-xl text-gray-800 mb-2">Dashboard de Analytics Empresarial</h4>
-                    <p class="text-gray-600 text-sm leading-6 mb-5 min-h-[70px]">Panel de control con métricas en tiempo real, gráficos interactivos y reportes automatizados para toma de decisiones.</p>
-                    <div class="portfolio-tags mb-5 flex flex-wrap gap-2">
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Chart.js</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Real-time</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Vue.js</span>
-                        <span class="portfolio-tag bg-gray-200 text-gray-700 py-1 px-3 rounded-md text-xs font-semibold">Export PDF</span>
-                    </div>
-                    <a href="#" class="portfolio-link inline-flex items-center text-blue-600 no-underline font-semibold transition-colors duration-300 hover:text-blue-800">
-                        Vista Previa <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+      </div>
     </div>
-</section>
-
-<div id="lightbox" class="lightbox fixed z-[10000] left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-90 justify-center items-center opacity-0 transition-opacity duration-300 hidden">
-    <span class="close-btn absolute top-5 right-9 text-gray-200 text-4xl font-bold transition-colors duration-300 cursor-pointer z-[10001] hover:text-gray-400">&times;</span>
-    <img class="lightbox-content m-auto block w-[90%] max-w-4xl max-h-[90vh] border-4 border-white shadow-2xl rounded-lg" id="lightbox-image" src="" alt="Imagen ampliada del proyecto">
-</div>
-    <section id="why-us" class="py-20 bg-light">
-        <div class="max-w-6xl mx-auto px-5">
-            <h2 class="font-bold text-4xl text-center text-gray-800 mb-10">¿Por Qué Elegir MB INSUMOS?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
-                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fas fa-handshake text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
-                    <h3 class="font-bold text-xl text-gray-800 mb-0">Experiencia y Confianza</h3>
-                    <p class="text-gray-600 max-w-xs mb-0">Más de 5 años de experiencia brindando soluciones tecnológicas.</p>
-                </div>
-                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fas fa-screwdriver-wrench text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
-                    <h3 class="font-bold text-xl text-gray-800 mb-0">Técnicos Certificados</h3>
-                    <p class="text-gray-600 max-w-xs mb-0">Personal altamente capacitado para garantizar un servicio de calidad.</p>
-                </div>
-                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fas fa-clipboard-check text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
-                    <h3 class="font-bold text-xl text-gray-800 mb-0">Garantía de Satisfacción</h3>
-                    <p class="text-gray-600 max-w-xs mb-0">Nos comprometemos con resultados efectivos y duraderos.</p>
-                </div>
-                <div class="bg-white p-7 rounded-lg shadow-md text-center flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300">
-                    <i class="fas fa-truck-fast text-4xl text-red-600 bg-red-50 p-3 rounded-full"></i>
-                    <h3 class="font-bold text-xl text-gray-800 mb-0">Rapidez y Eficiencia</h3>
-                    <p class="text-gray-600 max-w-xs mb-0">Entregas y servicios oportunos para minimizar tus tiempos de inactividad.</p>
-                </div>
-            </div>
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="lg:hidden hidden border-t border-white/10 bg-black/95 dark:bg-zinc-950/95">
+      <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+        <div class="grid gap-2">
+          <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#hero">Inicio</a>
+          <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#services">Servicios</a>
+          <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#software-portfolio">Portfolio Software</a>
+          <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#why-us">¿Por qué elegirnos?</a>
+          <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#faq">FAQ</a>
+          <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#contact">Contacto</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-5">
-            <h2 class="font-bold text-4xl text-center text-gray-800 mb-5">Contáctanos</h2>
-            <p class="text-center text-lg mb-10">¡Estamos listos para ayudarte! Llámanos, envíanos un correo o visita nuestras instalaciones.</p>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
-                <div class="contact-info">
-                    <h3 class="font-bold text-2xl text-gray-800 mb-6">Información de Contacto</h3>
-                    <p class="mb-3 flex items-center"><i class="fas fa-map-marker-alt text-red-600 mr-3 text-xl"></i> Av. 1, Colonia Cuauhtémoc, Córdoba, Veracruz, México</p>
-                    <p class="mb-3 flex items-center"><i class="fas fa-phone text-red-600 mr-3 text-xl"></i> (271) 715 82 65</p>
-                    <p class="mb-3 flex items-center"><i class="fas fa-phone text-red-600 mr-3 text-xl"></i> (271) 688 95 24</p>
-                    <p class="mb-6 flex items-center"><i class="fas fa-envelope text-red-600 mr-3 text-xl"></i> ventas.mbinsumos@gmail.com</p>
-                    <div class="social-links mt-5">
-                        <a href="https://www.facebook.com/MBInsumos1" target="_blank" aria-label="Facebook" class="inline-block text-3xl text-gray-800 mr-4 hover:text-red-600 transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/mb_insumos" target="_blank" aria-label="Instagram" class="inline-block text-3xl text-gray-800 hover:text-red-600 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3 class="font-bold text-2xl text-gray-800 mb-6">Envíanos un Mensaje</h3>
-                    <form id="contactForm">
-                        <div class="form-group mb-5">
-                            <label for="name" class="block mb-2 font-semibold">Nombre Completo:</label>
-                            <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-md text-base">
-                        </div>
-                        <div class="form-group mb-5">
-                            <label for="email" class="block mb-2 font-semibold">Correo Electrónico:</label>
-                            <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-md text-base">
-                        </div>
-                        <div class="form-group mb-5">
-                            <label for="phone" class="block mb-2 font-semibold">Teléfono (Opcional):</label>
-                            <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-md text-base">
-                        </div>
-                        <div class="form-group mb-5">
-                            <label for="message" class="block mb-2 font-semibold">Tu Mensaje:</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full p-3 border border-gray-300 rounded-md text-base resize-y"></textarea>
-                        </div>
-                        <button type="submit" class="bg-red-600 text-white py-3 px-8 text-lg border-0 cursor-pointer rounded-md hover:bg-red-700 transition-all duration-300">Enviar Mensaje</button>
-                        <div id="formMessage" class="mt-4 text-center font-bold"></div>
-                    </form>
-                </div>
-            </div>
-            <div class="map-container mt-12 rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.823023416163!2d-96.89685349408403!3d18.8741187313238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c4efa1e8102811%3A0x47d5bab284afd362!2sMB%20Insumos!5e0!3m2!1ses!2smx!4v1751906036316!5m2!1ses!2smx"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
-            </div>
+  <!-- Hero mejorado -->
+  <section id="hero" class="relative isolate min-h-[75vh] grid place-items-center overflow-hidden">
+    <img src="img/FinalDeskto.svg" alt="Fondo" class="absolute inset-0 -z-20 h-full w-full object-cover" />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/60 to-black/30 dark:from-black/80"></div>
+    <div class="absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)] bg-hero-grid bg-[size:24px_24px]"></div>
+    <div class="mx-auto max-w-5xl px-6 text-center text-white fade-in">
+      <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide ring-1 ring-white/20"> 
+        <i class="fa-solid fa-star text-yellow-300"></i> Soporte • Reparación • Desarrollo
+      </span>
+      <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+        Soluciones <span class="bg-gradient-to-r from-rose-400 to-rose-600 bg-clip-text text-transparent">integrales</span> para tu negocio
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-white/90">Mantén tus equipos a punto y acelera tu operación con software a medida.</p>
+      <div class="mt-8 flex items-center justify-center gap-3">
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-white font-semibold shadow-soft hover:bg-rose-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+          Solicitar cotización <i class="fa-solid fa-arrow-right text-sm"></i>
+        </a>
+        <a href="#services" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-white/90 hover:bg-white/10">
+          Ver servicios
+        </a>
+      </div>
+      <!-- Stats -->
+      <div class="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-4 text-left">
+        <div class="rounded-2xl bg-white/10 px-4 py-3 ring-1 ring-white/15">
+          <p class="text-2xl font-bold">5+</p><p class="text-xs text-white/80">Años de experiencia</p>
         </div>
-    </section>
-
-    <footer class="bg-black text-white text-center py-6 mt-5">
-        <div class="max-w-6xl mx-auto px-5">
-            <p class="mb-0">© 2025 MB INSUMOS. Todos los derechos reservados.</p>
+        <div class="rounded-2xl bg-white/10 px-4 py-3 ring-1 ring-white/15">
+          <p class="text-2xl font-bold">300+</p><p class="text-xs text-white/80">Equipos reparados</p>
         </div>
-    </footer>
+        <div class="rounded-2xl bg-white/10 px-4 py-3 ring-1 ring-white/15">
+          <p class="text-2xl font-bold">40+</p><p class="text-xs text-white/80">Proyectos de software</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <a href="https://wa.me/522717158265" class="whatsapp-float fixed w-15 h-15 bottom-10 right-14 bg-green-500 text-white rounded-full text-center text-3xl shadow-lg z-50 flex items-center justify-center transition-colors duration-300 hover:bg-green-600" target="_blank"
-        aria-label="Chatea con nosotros por WhatsApp">
-        <span class="whatsapp-label absolute invisible w-44 bg-gray-600 text-white text-center rounded-md py-2 bottom-full left-1/2 transform -translate-x-1/2 opacity-0 transition-all duration-300 text-sm whitespace-nowrap mb-2">Comunícate con nosotros</span>
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- Cinta CTA -->
+  <section class="relative isolate -mt-8">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl bg-gradient-to-r from-rose-600 to-rose-500 px-6 py-6 text-white shadow-soft">
+        <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p class="text-center text-sm md:text-base">¿Necesitas mantenimiento urgente? Recolectamos, reparamos y entregamos en tu domicilio.</p>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-sm font-semibold ring-1 ring-white/20 hover:bg-white/20">Agendar ahora <i class="fa-solid fa-calendar-check text-xs"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="scripts.js"></script>
+  <!-- Servicios (cards mejoradas) -->
+  <section id="services" class="py-20 bg-white dark:bg-zinc-950">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700 ring-1 ring-rose-200 dark:bg-rose-900/20 dark:text-rose-300 dark:ring-rose-700/40">Servicios</span>
+        <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Lo que hacemos</h2>
+        <p class="mt-3 text-gray-600 dark:text-zinc-400">Mantenimiento, reparación, desarrollo y suministros para que nada se detenga.</p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-print"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Soporte y mantenimiento de impresoras</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Preventivo y correctivo para todas las marcas y modelos.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand">
+            <span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i>
+          </div>
+          <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-laptop"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Reparación de laptops y PCs</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Diagnóstico, hardware, software, optimización y respaldos.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
+          <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-mobile-alt"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Reparación de celulares y tablets</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Pantallas, batería, carga y restauración de software.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
+          <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-code"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Desarrollo de software</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Web apps, sistemas administrativos y soluciones a medida.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
+          <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-boxes"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Proveeduría de insumos</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Tóner, cartuchos, refacciones y accesorios originales.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
+          <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-truck-moving"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Envío a domicilio</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Cobertura en Córdoba, Fortín y Amatlán.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
+          <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner intermedio -->
+  <section class="py-6">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fa-solid fa-shield-heart"></i></span>
+            <p class="text-sm text-gray-700 dark:text-zinc-300">Todas las reparaciones incluyen garantía por escrito.</p>
+          </div>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-md bg-brand px-5 py-2 text-sm font-semibold text-white shadow hover:bg-rose-700">Solicitar diagnóstico</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio con tabs mejorados -->
+  <section id="software-portfolio" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50/50 dark:from-zinc-950 dark:to-zinc-900">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700 ring-1 ring-rose-200 dark:bg-rose-900/20 dark:text-rose-300 dark:ring-rose-700/40">Portfolio</span>
+        <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Proyectos destacados</h2>
+        <p class="mt-3 text-gray-600 dark:text-zinc-400">Convertimos ideas en productos listos para crecer.</p>
+      </div>
+
+      <!-- Tabs / Filtros -->
+      <div class="mt-8 flex justify-center">
+        <div class="inline-flex rounded-full bg-gray-100 p-1 ring-1 ring-gray-200 dark:bg-zinc-800 dark:ring-zinc-700">
+          <button class="filter-btn tab-active rounded-full px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white data-[active=true]:bg-white data-[active=true]:shadow data-[active=true]:ring-1 data-[active=true]:ring-gray-200 dark:data-[active=true]:bg-zinc-900 dark:data-[active=true]:ring-zinc-700" data-filter="all" data-active="true">Todos</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 dark:text-zinc-300" data-filter="web">Apps web</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 dark:text-zinc-300" data-filter="admin">Sistemas admin</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 dark:text-zinc-300" data-filter="ecommerce">E‑commerce</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 dark:text-zinc-300" data-filter="custom">A medida</button>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Items (igual estructura, mejor overlay y botón) -->
+        <article class="portfolio-item group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900" data-category="admin custom">
+          <div class="relative h-56 overflow-hidden">
+            <img src="img/Admin_Consultorio.png" alt="Consultorio" class="h-full w-full object-cover transition group-hover:scale-[1.03]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <button class="open-lightbox absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-sm font-semibold text-gray-900 shadow hover:bg-white" data-image-url="img/Admin_Consultorio.png"><i class="fa-solid fa-magnifying-glass-plus"></i> Ver</button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Página web para consultorio médico</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Gestión de pacientes, citas y facturación.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">React</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Node.js</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">MySQL</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Dashboard</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900" data-category="admin web">
+          <div class="relative h-56 overflow-hidden">
+            <img src="img/Admin_Gym.png" alt="Gimnasio" class="h-full w-full object-cover transition group-hover:scale-[1.03]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <button class="open-lightbox absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-sm font-semibold text-gray-900 shadow hover:bg-white" data-image-url="img/Admin_Gym.png"><i class="fa-solid fa-magnifying-glass-plus"></i> Ver</button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Página web para un gimnasio</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Membresías, reservas y pagos en línea.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">PHP</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">PayPal</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Bootstrap</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Responsive</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900" data-category="admin custom">
+          <div class="relative h-56 overflow-hidden">
+            <img src="img/Admin_Lab.png" alt="Laboratorio" class="h-full w-full object-cover transition group-hover:scale-[1.03]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <button class="open-lightbox absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-sm font-semibold text-gray-900 shadow hover:bg-white" data-image-url="img/Admin_Lab.png"><i class="fa-solid fa-magnifying-glass-plus"></i> Ver</button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Página web para laboratorio pecuario</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Gestión de muestras y resultados.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">SAT</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Angular</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">API REST</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">PDF</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900" data-category="ecommerce web">
+          <div class="relative h-56 overflow-hidden">
+            <img src="img/Admin_Natural.png" alt="Tienda naturista" class="h-full w-full object-cover transition group-hover:scale-[1.03]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <button class="open-lightbox absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-sm font-semibold text-gray-900 shadow hover:bg-white" data-image-url="img/Admin_Natural.png"><i class="fa-solid fa-magnifying-glass-plus"></i> Ver</button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Tienda naturista</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">E‑commerce con catálogo y envíos.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">PWA</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Maps API</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">WebSocket</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Mobile First</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900" data-category="admin web">
+          <div class="relative h-56 overflow-hidden">
+            <img src="img/Admin_Lab2.png" alt="Dashboard" class="h-full w-full object-cover transition group-hover:scale-[1.03]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <button class="open-lightbox absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-sm font-semibold text-gray-900 shadow hover:bg-white" data-image-url="img/Admin_Lab2.png"><i class="fa-solid fa-magnifying-glass-plus"></i> Ver</button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Dashboard de analytics</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Métricas en tiempo real y reportes.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Chart.js</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Tiempo real</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Vue.js</span>
+              <span class="rounded-md bg-gray-100 px-2.5 py-1 dark:bg-zinc-800">Export PDF</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué elegirnos (cards con tono dark) -->
+  <section id="why-us" class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">¿Por qué elegir MB INSUMOS?</h2>
+        <p class="mt-3 text-gray-600 dark:text-zinc-400">Experiencia, garantías y tiempos de respuesta que sí cumplen.</p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fa-solid fa-handshake"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Experiencia y confianza</h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-zinc-400">Más de 5 años brindando soluciones tecnológicas.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Técnicos certificados</h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-zinc-400">Personal capacitado y procesos documentados.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Garantía de satisfacción</h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-zinc-400">Resultados duraderos y soporte post‑servicio.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Rapidez y eficiencia</h3>
+          <p class="mt-1 text-sm text-gray-600 dark:text-zinc-400">Entregas puntuales para minimizar inactividad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (accordion sin JS) -->
+  <section id="faq" class="py-16 bg-white dark:bg-zinc-950">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="inline-flex items-center gap-2 rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700 ring-1 ring-rose-200 dark:bg-rose-900/20 dark:text-rose-300 dark:ring-rose-700/40">FAQ</span>
+        <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Preguntas frecuentes</h2>
+      </div>
+      <div class="mt-8 space-y-3">
+        <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm open:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 text-left font-semibold text-gray-900 dark:text-white">
+            ¿Cuánto tiempo tarda una reparación?
+            <span class="transition group-open:rotate-180 text-gray-500"><i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">La mayoría se resuelven entre 24 y 72 horas según disponibilidad de refacciones.</p>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm open:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 text-left font-semibold text-gray-900 dark:text-white">¿Otorgan garantía?<span class="transition group-open:rotate-180 text-gray-500"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Sí, todas las reparaciones incluyen garantía por escrito y seguimiento.</p>
+        </details>
+        <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm open:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 text-left font-semibold text-gray-900 dark:text-white">¿Trabajan a domicilio?<span class="transition group-open:rotate-180 text-gray-500"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Sí, con cobertura en Córdoba, Fortín y Amatlán.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="py-20 bg-white dark:bg-zinc-950">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Contáctanos</h2>
+        <p class="mt-3 text-gray-600 dark:text-zinc-400">¡Listos para ayudarte! Escríbenos o visítanos.</p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Info cards -->
+        <div class="grid gap-4">
+          <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <div class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-brand"></i><div><h3 class="font-semibold text-gray-900 dark:text-white">Dirección</h3><p class="text-sm text-gray-600 dark:text-zinc-400">Av. 1, Colonia Cuauhtémoc, Córdoba, Veracruz, México</p></div></div>
+          </div>
+          <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <div class="flex items-start gap-3"><i class="fa-solid fa-phone mt-1 text-brand"></i><div><h3 class="font-semibold text-gray-900 dark:text-white">Teléfonos</h3><p class="text-sm text-gray-600 dark:text-zinc-400">(271) 715 82 65 · (271) 688 95 24</p></div></div>
+          </div>
+          <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <div class="flex items-start gap-3"><i class="fa-solid fa-envelope mt-1 text-brand"></i><div><h3 class="font-semibold text-gray-900 dark:text-white">Correo</h3><p class="text-sm text-gray-600 dark:text-zinc-400">ventas.mbinsumos@gmail.com</p></div></div>
+          </div>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://www.facebook.com/MBInsumos1" target="_blank" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mb_insumos" target="_blank" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <!-- Form -->
+        <form id="contactForm" class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="grid grid-cols-1 gap-5">
+            <label class="grid gap-2">
+              <span class="text-sm font-medium text-gray-700 dark:text-zinc-300">Nombre completo</span>
+              <input id="name" name="name" type="text" required class="rounded-md border-gray-300 focus:border-brand focus:ring-brand dark:border-zinc-700 dark:bg-zinc-900/60" />
+            </label>
+            <label class="grid gap-2">
+              <span class="text-sm font-medium text-gray-700 dark:text-zinc-300">Correo electrónico</span>
+              <input id="email" name="email" type="email" required class="rounded-md border-gray-300 focus:border-brand focus:ring-brand dark:border-zinc-700 dark:bg-zinc-900/60" />
+            </label>
+            <label class="grid gap-2">
+              <span class="text-sm font-medium text-gray-700 dark:text-zinc-300">Teléfono (opcional)</span>
+              <input id="phone" name="phone" type="tel" class="rounded-md border-gray-300 focus:border-brand focus:ring-brand dark:border-zinc-700 dark:bg-zinc-900/60" />
+            </label>
+            <label class="grid gap-2">
+              <span class="text-sm font-medium text-gray-700 dark:text-zinc-300">Mensaje</span>
+              <textarea id="message" name="message" rows="5" required class="rounded-md border-gray-300 focus:border-brand focus:ring-brand dark:border-zinc-700 dark:bg-zinc-900/60"></textarea>
+            </label>
+            <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-white shadow hover:bg-rose-700">
+              Enviar mensaje <i class="fa-solid fa-paper-plane text-sm"></i>
+            </button>
+            <p id="formMessage" class="text-sm font-semibold"></p>
+          </div>
+        </form>
+      </div>
+      <!-- Map -->
+      <div class="mt-12 overflow-hidden rounded-2xl border border-gray-200 shadow-sm dark:border-zinc-800">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.823023416163!2d-96.89685349408403!3d18.8741187313238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c4efa1e8102811%3A0x47d5bab284afd362!2sMB%20Insumos!5e0!3m2!1ses!2smx!4v1751906036316!5m2!1ses!2smx" width="100%" height="420" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white dark:bg-zinc-950">
+    <div class="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm">© 2025 MB INSUMOS. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-3">
+        <button id="scrollTop" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/90 hover:bg-white/10">Volver arriba <i class="fa-solid fa-arrow-up"></i></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/522717158265" target="_blank" aria-label="Chatea con nosotros por WhatsApp" class="group fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl hover:bg-emerald-600">
+    <i class="fab fa-whatsapp text-2xl"></i>
+    <span class="pointer-events-none absolute -top-3 right-16 hidden rounded-md bg-gray-900 px-3 py-1 text-xs font-medium text-white shadow-lg group-hover:block">Comunícate con nosotros</span>
+  </a>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden place-items-center bg-black/80 backdrop-blur-8 p-6">
+    <button id="lightboxClose" class="absolute right-6 top-6 text-white/80 hover:text-white text-3xl" aria-label="Cerrar">&times;</button>
+    <img id="lightboxImage" src="" alt="Vista previa" class="max-h-[85vh] w-auto max-w-5xl rounded-xl border-4 border-white shadow-2xl" />
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Dark mode toggle (persiste en localStorage)
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle?.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Portfolio filters (tabs)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.portfolio-item');
+    function applyFilter(filter) {
+      items.forEach(card => {
+        const cats = card.dataset.category.split(' ');
+        const show = filter === 'all' || cats.includes(filter);
+        card.classList.toggle('hidden', !show);
+      });
+    }
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.dataset.active = false);
+        btn.dataset.active = true;
+        applyFilter(btn.dataset.filter);
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    document.querySelectorAll('.open-lightbox').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lightboxImg.src = btn.dataset.imageUrl;
+        lightbox.classList.remove('hidden');
+      });
+    });
+    document.getElementById('lightboxClose')?.addEventListener('click', () => lightbox.classList.add('hidden'));
+    lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.add('hidden'); });
+
+    // Simple form submit demo
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMessage');
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMsg.textContent = '¡Gracias! Hemos recibido tu mensaje.';
+      formMsg.className = 'mt-2 text-emerald-600 dark:text-emerald-400';
+      contactForm.reset();
+    });
+
+    // Scroll top button
+    document.getElementById('scrollTop')?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  </script>
 </body>
-
 </html>
