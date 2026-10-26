@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MB SmartToner – Brother TN-1060 | Ficha Digital y Soporte</title>
+  <link rel="icon" type="image/png" href="LOGO.ico" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#e11d48',
+              50:'#fff1f2',100:'#ffe4e6',200:'#fecdd3',300:'#fda4af',400:'#fb7185',500:'#f43f5e',600:'#e11d48',700:'#be123c',800:'#9f1239',900:'#881337'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px -10px rgba(225,29,72,.35)',
+            glow: '0 0 25px -5px rgba(225,29,72,.4)'
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .font-display { font-family: 'Montserrat', system-ui, sans-serif; }
+    .font-body { font-family: 'Poppins', system-ui, sans-serif; }
+    .step-active { border-color: #e11d48; background-color: #fff1f2; }
+    .dark .step-active { background-color: rgba(225, 29, 72, 0.15); border-color: #f43f5e; }
+  </style>
+</head>
+<body class="font-body bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 min-h-screen flex flex-col antialiased selection:bg-brand selection:text-white">
+
+  <!-- Header Superior -->
+  <header class="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 dark:bg-zinc-900/90 transition-colors">
+    <div class="mx-auto max-w-4xl px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="img/LOGO.jpg" alt="MB INSUMOS" class="h-9 w-9 rounded-lg object-cover ring-1 ring-zinc-200 dark:ring-zinc-700 shadow-sm" />
+        <div class="leading-none">
+          <span class="font-display font-bold text-zinc-900 dark:text-white text-base tracking-tight flex items-center gap-1.5">
+            MB INSUMOS
+            <span class="rounded bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300 text-[10px] font-extrabold px-1.5 py-0.5 uppercase tracking-wide">SmartToner</span>
+          </span>
+          <span class="text-[11px] text-zinc-500 dark:text-zinc-400">Córdoba • Fortín • Amatlán</span>
+        </div>
+      </a>
+      
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="rounded-full p-2 text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 transition" aria-label="Cambiar tema">
+          <i class="fa-solid fa-moon text-base dark:hidden"></i>
+          <i class="fa-solid fa-sun text-base hidden dark:inline"></i>
+        </button>
+        <a href="#reordenar" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-3.5 py-1.5 text-xs font-semibold text-white shadow-soft hover:bg-rose-700 transition">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Reponer</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner del Cartucho Escaneado -->
+  <section class="bg-gradient-to-b from-rose-50 via-white to-zinc-50 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-950 border-b border-zinc-200 dark:border-zinc-800/60 pt-6 pb-8 px-4">
+    <div class="mx-auto max-w-4xl">
+      <!-- Badge de Lote y Estado -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 px-3 py-1 text-xs font-semibold text-emerald-800 dark:text-emerald-300">
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Cartucho Verificado • Garantía MB</span>
+        </div>
+        <div id="cartridgeBadge" class="text-xs font-medium text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-800 px-2.5 py-1 rounded-md border border-zinc-200 dark:border-zinc-700">
+          ID Cartucho: <span id="cartridgeIdDisplay" class="font-mono font-bold text-zinc-800 dark:text-zinc-200">TN1060-001</span>
+        </div>
+      </div>
+
+      <!-- Hero Card del Producto -->
+      <div class="rounded-3xl border border-zinc-200/80 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 flex flex-col md:flex-row items-center gap-6">
+        <div class="relative w-36 h-36 flex-shrink-0 flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 rounded-2xl border border-zinc-200 dark:border-zinc-700 p-4">
+          <i class="fa-solid fa-box-archive text-5xl text-brand/80"></i>
+          <span class="absolute -bottom-2 -right-2 bg-zinc-900 text-white dark:bg-brand text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
+            1,000 pág
+          </span>
+        </div>
+
+        <div class="flex-1 text-center md:text-left">
+          <p class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Consumible Inteligente MB Insumos</p>
+          <h1 class="mt-1 font-display text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">
+            Tóner Láser Brother TN-1060
+          </h1>
+          <p class="mt-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+            Rendimiento estándar estimado: <strong class="text-zinc-900 dark:text-white">1,000 páginas</strong> al 5% de cobertura. Calidad de impresión nítida y negra profunda.
+          </p>
+
+          <!-- Badges de Compatibilidad Rápida -->
+          <div class="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-1.5">
+            <span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mr-1">Compatible con:</span>
+            <span class="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs px-2.5 py-0.5 rounded-md font-medium border border-zinc-200 dark:border-zinc-700">HL-1110</span>
+            <span class="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs px-2.5 py-0.5 rounded-md font-medium border border-zinc-200 dark:border-zinc-700">HL-1112</span>
+            <span class="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs px-2.5 py-0.5 rounded-md font-medium border border-zinc-200 dark:border-zinc-700">HL-1200 / 1202</span>
+            <span class="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs px-2.5 py-0.5 rounded-md font-medium border border-zinc-200 dark:border-zinc-700">HL-1212W</span>
+            <span class="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs px-2.5 py-0.5 rounded-md font-medium border border-zinc-200 dark:border-zinc-700">DCP-1512 / 1602</span>
+            <span class="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs px-2.5 py-0.5 rounded-md font-medium border border-zinc-200 dark:border-zinc-700">DCP-1617NW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acciones Rápidas (Grid Flotante de Acciones) -->
+  <main class="mx-auto max-w-4xl px-4 py-8 flex-1 space-y-8">
+
+    <!-- Tarjeta Destacada: Reordenar por WhatsApp -->
+    <section id="reordenar" class="rounded-3xl border border-rose-200/90 bg-gradient-to-br from-rose-500 to-rose-700 text-white p-6 shadow-soft relative overflow-hidden">
+      <div class="absolute -right-8 -bottom-8 opacity-15 pointer-events-none text-9xl">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+      <div class="relative z-10">
+        <div class="flex items-center gap-2">
+          <span class="bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide">Repuesto en 1 Clic</span>
+          <span class="text-xs text-rose-100">Sin llamadas ni registros complicados</span>
+        </div>
+        <h2 class="mt-2 font-display text-2xl sm:text-3xl font-extrabold">¿Se te está terminando el tóner?</h2>
+        <p class="mt-2 text-rose-100 text-sm sm:text-base max-w-xl">
+          Solicita tu reposición al instante por WhatsApp. Te entregamos directamente a tu domicilio o negocio en Córdoba, Fortín y Amatlán.
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <button id="btnOrderWhatsapp" class="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-6 py-4 font-bold text-rose-600 shadow-lg hover:bg-rose-50 transition text-base">
+            <i class="fa-brands fa-whatsapp text-2xl text-emerald-500"></i>
+            <span>Pedir reposición por WhatsApp</span>
+          </button>
+          <a href="tel:2717158265" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-rose-800/60 border border-white/20 px-5 py-4 font-semibold text-white hover:bg-rose-800 transition text-sm">
+            <i class="fa-solid fa-phone"></i>
+            <span>Llamar: (271) 715 82 65</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guía Interactiva de Instalación Paso a Paso -->
+    <section id="guia" class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <div class="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-4">
+        <div>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 uppercase tracking-wider">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Guía Rápida
+          </span>
+          <h2 class="mt-1 font-display text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">
+            Cómo Instalar tu Tóner Brother TN-1060
+          </h2>
+        </div>
+        <span class="hidden sm:inline-block rounded-full bg-zinc-100 dark:bg-zinc-800 px-3 py-1 text-xs font-semibold text-zinc-600 dark:text-zinc-300">
+          5 pasos • ~2 min
+        </span>
+      </div>
+
+      <!-- Barra de Progreso de Pasos -->
+      <div class="mt-6">
+        <div class="grid grid-cols-5 gap-2 text-center text-xs font-semibold">
+          <button class="step-btn py-2 px-1 rounded-xl transition border border-zinc-200 dark:border-zinc-700 step-active" data-step="1">1. Retirar</button>
+          <button class="step-btn py-2 px-1 rounded-xl transition border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/40 text-zinc-500 dark:text-zinc-400" data-step="2">2. Desempaque</button>
+          <button class="step-btn py-2 px-1 rounded-xl transition border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/40 text-zinc-500 dark:text-zinc-400" data-step="3">3. Agitar</button>
+          <button class="step-btn py-2 px-1 rounded-xl transition border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/40 text-zinc-500 dark:text-zinc-400" data-step="4">4. Montar</button>
+          <button class="step-btn py-2 px-1 rounded-xl transition border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/40 text-zinc-500 dark:text-zinc-400" data-step="5">5. Limpiar</button>
+        </div>
+      </div>
+
+      <!-- Contenedor del Paso Activo -->
+      <div class="mt-6 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/80 dark:border-zinc-700/60 p-5">
+        <!-- Paso 1 -->
+        <div id="stepContent1" class="step-content space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">1</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Extraer la unidad de tambor de la impresora</h3>
+          </div>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            Abre la cubierta superior o frontal de tu impresora Brother. Toma la manija del conjunto (unidad de tambor DR-1060 con el cartucho viejo) y jálala con suavidad hacia afuera.
+          </p>
+          <div class="rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 p-3 text-xs text-amber-800 dark:text-amber-200 flex items-start gap-2">
+            <i class="fa-solid fa-triangle-exclamation mt-0.5 text-amber-500"></i>
+            <span>Coloca la unidad sobre una superficie plana y limpia, preferiblemente sobre una hoja de papel para evitar manchar con residuos de polvo.</span>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div id="stepContent2" class="step-content hidden space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">2</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Desempacar el nuevo TN-1060 y retirar el protector</h3>
+          </div>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            Saca el cartucho nuevo de su bolsa protectora antiestática. Retira con cuidado la <strong>tapa o precinto protector naranja</strong> que cubre el rodillo del cartucho.
+          </p>
+          <div class="rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 p-3 text-xs text-rose-800 dark:text-rose-200 flex items-start gap-2">
+            <i class="fa-solid fa-hand-dots mt-0.5 text-rose-500"></i>
+            <span><strong>¡Atención!</strong> No toques el rodillo negro ni los engranes laterales para evitar rayas o marcas en tus futuras impresiones.</span>
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div id="stepContent3" class="step-content hidden space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">3</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Agitar suavemente de lado a lado</h3>
+          </div>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            Sostén el cartucho con ambas manos de forma horizontal y muévelo suavemente de izquierda a derecha unas <strong>5 o 6 veces</strong>.
+          </p>
+          <div class="rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 p-3 text-xs text-blue-800 dark:text-blue-200 flex items-start gap-2">
+            <i class="fa-solid fa-circle-info mt-0.5 text-blue-500"></i>
+            <span>Esto distribuye el polvo de tóner de manera homogénea en el depósito interno, garantizando máxima calidad desde la primera hoja.</span>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div id="stepContent4" class="step-content hidden space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">4</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Insertar el cartucho en la unidad de tambor</h3>
+          </div>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            En la unidad de tambor DR-1060, presiona la palanquita verde hacia abajo para liberar el cartucho vacío y retíralo. Luego, coloca el cartucho nuevo y empújalo firmemente hasta escuchar un <strong>¡clic!</strong> audible. La palanquita verde se elevará automáticamente al quedar asegurado.
+          </p>
+        </div>
+
+        <!-- Paso 5 -->
+        <div id="stepContent5" class="step-content hidden space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">5</span>
+            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Limpiar el hilo corona e instalar en la impresora</h3>
+          </div>
+          <p class="text-sm text-zinc-600 dark:text-zinc-300">
+            Desliza la pequeña pestaña verde del tambor de lado a lado varias veces para limpiar el hilo corona interno. Asegúrate de <strong>regresar la pestaña a su posición inicial (icono de flecha)</strong>. Vuelve a colocar todo el conjunto en la impresora y cierra la tapa. ¡Listo para imprimir!
+          </p>
+        </div>
+
+        <!-- Botones de Navegación del Paso -->
+        <div class="mt-5 flex items-center justify-between border-t border-zinc-200 dark:border-zinc-700/60 pt-3">
+          <button id="btnPrevStep" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-600 dark:text-zinc-300 hover:text-brand disabled:opacity-30 disabled:pointer-events-none" disabled>
+            <i class="fa-solid fa-arrow-left"></i> Anterior
+          </button>
+          <span id="stepCounter" class="text-xs font-medium text-zinc-500">Paso 1 de 5</span>
+          <button id="btnNextStep" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand hover:text-rose-700">
+            Siguiente <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculadora de Reposición Estimada (Evita quedarte sin tinta) -->
+    <section class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <div class="flex items-start gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-950/60">
+          <i class="fa-solid fa-calculator text-lg"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-rose-600 dark:text-rose-400 uppercase tracking-wider">Planificador Inteligente</span>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">
+            Calculadora de Duración del Tóner
+          </h2>
+          <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+            Calcula la fecha aproximada en la que necesitarás reponer tu cartucho según tu ritmo de impresión habitual.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <!-- Input de consumo -->
+        <div class="space-y-4 bg-zinc-50 dark:bg-zinc-800/40 p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-700/60">
+          <div>
+            <label for="pagesPerDay" class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">
+              ¿Cuántas hojas imprimes al día en promedio?
+            </label>
+            <div class="flex items-center gap-3">
+              <input type="range" id="pagesRange" min="5" max="100" value="20" step="5" class="w-full accent-rose-600 cursor-pointer" />
+              <span id="pagesDisplay" class="font-mono font-bold text-lg text-brand min-w-[50px] text-right">20</span>
+              <span class="text-xs text-zinc-500">hojas/día</span>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-zinc-200 dark:border-zinc-700/60">
+            <label for="installDate" class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">
+              Fecha de instalación aproximada:
+            </label>
+            <input type="date" id="installDate" class="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white" />
+          </div>
+        </div>
+
+        <!-- Resultado Calculado -->
+        <div class="rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100/60 dark:from-zinc-800 dark:to-zinc-800/60 border border-rose-200 dark:border-rose-900/40 p-5 text-center">
+          <p class="text-xs font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wider">Duración estimada del cartucho</p>
+          <div class="mt-2 text-3xl sm:text-4xl font-extrabold font-display text-zinc-900 dark:text-white" id="weeksEstimate">
+            ~10 semanas
+          </div>
+          <p class="mt-1 text-xs text-zinc-600 dark:text-zinc-300">
+            Fecha calculada de reposición: <strong id="dateEstimate" class="text-brand">20 de Enero 2026</strong>
+          </p>
+
+          <button id="btnSaveReminder" class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-xs font-bold text-white shadow hover:bg-rose-700 transition w-full sm:w-auto">
+            <i class="fa-solid fa-bell"></i>
+            <span>Agendar recordatorio en mi calendario (.ics)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programa de Recolección Responsable y Reciclaje -->
+    <section class="rounded-3xl border border-emerald-200 bg-emerald-50/60 p-6 shadow-sm dark:border-emerald-900/40 dark:bg-zinc-900">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-3">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow">
+            <i class="fa-solid fa-recycle text-xl"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 text-[10px] font-bold px-2 py-0.5 uppercase">Eco-Iniciativa</span>
+              <span class="text-xs text-emerald-700 dark:text-emerald-400 font-semibold">¡No tires tu cartucho a la basura!</span>
+            </div>
+            <h2 class="mt-1 font-display text-xl font-bold text-zinc-900 dark:text-white">
+              Recolección Responsable de Cartuchos Usados
+            </h2>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 max-w-xl">
+              Recolectamos tus cartuchos vacíos sin costo en Córdoba, Fortín y Amatlán. Promovemos el reciclaje adecuado para evitar contaminación ambiental y obtienes un <strong>beneficio especial en tu próxima recarga o compra</strong>.
+            </p>
+          </div>
+        </div>
+
+        <button id="btnRecycleWhatsapp" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white shadow hover:bg-emerald-700 transition flex-shrink-0 w-full sm:w-auto">
+          <i class="fa-solid fa-truck-pickup"></i>
+          <span>Solicitar recolección</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Solución Rápida de Dudas Comunes (Troubleshooting) -->
+    <section class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <div class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          <i class="fa-solid fa-circle-question text-lg"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-zinc-500 uppercase tracking-wider">Soporte Técnico MB</span>
+          <h2 class="font-display text-xl font-bold text-zinc-900 dark:text-white">
+            Solución a Problemas Frecuentes
+          </h2>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-3">
+        <details class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 open:bg-zinc-50/60 dark:open:bg-zinc-850 transition">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-sm text-zinc-900 dark:text-white">
+            <span>¿La impresora sigue marcando "Tóner Bajo" tras instalar el nuevo?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition group-open:rotate-180"></i>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2">
+            <p>En modelos Brother como la HL-1110 / HL-1200 / DCP-1617NW, en ocasiones el engrane reseteador debe sincronizarse o se puede forzar el reseteo manual presionando el botón de encendido 7 veces continuas con la tapa abierta (dependiendo del modelo específico).</p>
+            <p>Si esto te ocurre, pulsa el botón de WhatsApp abajo y nuestro equipo técnico te enviará el procedimiento exacto para tu modelo en menos de 5 minutos.</p>
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 open:bg-zinc-50/60 dark:open:bg-zinc-850 transition">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-sm text-zinc-900 dark:text-white">
+            <span>¿Salen líneas negras verticales o manchas repetitivas en la hoja?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition group-open:rotate-180"></i>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p>Esto casi siempre se debe a suciedad en el hilo corona o en el cilindro fotoconductor (tambor DR-1060). Pasa la pestañita verde del tambor varias veces de lado a lado y asegúrate de regresarla a su lugar. Si la marca persiste, el tambor podría requerir mantenimiento o reemplazo.</p>
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 open:bg-zinc-50/60 dark:open:bg-zinc-850 transition">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-sm text-zinc-900 dark:text-white">
+            <span>¿Qué garantía tiene mi cartucho MB SmartToner?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition group-open:rotate-180"></i>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p>Todos nuestros cartuchos compatibles cuentan con <strong>garantía total de reemplazo inmediato</strong> contra cualquier defecto de fábrica o mancha en impresión. Contáctanos con una foto de la prueba de impresión y te lo cambiamos sin costo.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Ficha Técnica Completa y Compatibilidad -->
+    <section class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <h2 class="font-display text-lg font-bold text-zinc-900 dark:text-white mb-4">
+        Especificaciones Técnicas Brother TN-1060
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div class="rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 p-3 border border-zinc-200/80 dark:border-zinc-700/60">
+          <span class="text-[11px] text-zinc-500 block">Tipo</span>
+          <span class="font-bold text-sm text-zinc-800 dark:text-zinc-200">Láser Monocromático</span>
+        </div>
+        <div class="rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 p-3 border border-zinc-200/80 dark:border-zinc-700/60">
+          <span class="text-[11px] text-zinc-500 block">Color</span>
+          <span class="font-bold text-sm text-zinc-800 dark:text-zinc-200">Negro Intenso</span>
+        </div>
+        <div class="rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 p-3 border border-zinc-200/80 dark:border-zinc-700/60">
+          <span class="text-[11px] text-zinc-500 block">Rendimiento</span>
+          <span class="font-bold text-sm text-zinc-800 dark:text-zinc-200">1,000 páginas</span>
+        </div>
+        <div class="rounded-2xl bg-zinc-50 dark:bg-zinc-800/40 p-3 border border-zinc-200/80 dark:border-zinc-700/60">
+          <span class="text-[11px] text-zinc-500 block">Unidad Tambor</span>
+          <span class="font-bold text-sm text-zinc-800 dark:text-zinc-200">DR-1060</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra de Métricas del Piloto (visible para evaluación del proyecto) -->
+    <section class="rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700 p-4 text-center text-xs text-zinc-500 dark:text-zinc-400">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="font-semibold text-zinc-700 dark:text-zinc-300">
+          <i class="fa-solid fa-chart-line text-brand mr-1"></i> Piloto MB SmartToner (20 unidades)
+        </span>
+        <div class="flex items-center gap-3">
+          <span>Escaneos registrados: <strong id="scanCounterDisplay" class="text-zinc-900 dark:text-white">1</strong></span>
+          <span>•</span>
+          <a href="etiqueta-smart-toner.html" class="text-brand font-semibold hover:underline inline-flex items-center gap-1">
+            <i class="fa-solid fa-print"></i> Ver generador de etiquetas
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Barra Fija Inferior para Móviles (CTA de Reposición Directa) -->
+  <div class="sm:hidden sticky bottom-0 z-40 bg-white/95 dark:bg-zinc-900/95 border-t border-zinc-200 dark:border-zinc-800 p-3 backdrop-blur-md">
+    <button id="btnMobileOrder" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-brand py-3 text-sm font-bold text-white shadow-soft">
+      <i class="fa-brands fa-whatsapp text-lg"></i>
+      <span>Pedir Reposición por WhatsApp</span>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 py-6 px-4 text-center text-xs text-zinc-500">
+    <p>© 2025-2026 MB INSUMOS • Soporte, Mantenimiento y Desarrollo.</p>
+    <p class="mt-1">Córdoba, Veracruz, México • Tel: (271) 715 82 65 / (271) 688 95 24</p>
+  </footer>
+
+  <!-- Lógica de la Ficha Digital -->
+  <script>
+    // 1. Detección del ID del Cartucho desde la URL (?cid=01 o por defecto 01)
+    const urlParams = new URLSearchParams(window.location.search);
+    const cartId = urlParams.get('cid') || '01';
+    const formattedId = 'TN1060-' + cartId.toString().padStart(3, '0');
+    document.getElementById('cartridgeIdDisplay').textContent = formattedId;
+
+    // Registro de escaneo en métricas locales
+    const scanKey = 'mb_smarttoner_scans';
+    let scans = JSON.parse(localStorage.getItem(scanKey) || '{}');
+    scans[formattedId] = (scans[formattedId] || 0) + 1;
+    localStorage.setItem(scanKey, JSON.stringify(scans));
+    const totalScans = Object.values(scans).reduce((a, b) => a + b, 0);
+    document.getElementById('scanCounterDisplay').textContent = totalScans;
+
+    // 2. Control de Modo Oscuro
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle?.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // 3. Pasos de Instalación Interactiva
+    let currentStep = 1;
+    const totalSteps = 5;
+    const stepBtns = document.querySelectorAll('.step-btn');
+    const stepContents = document.querySelectorAll('.step-content');
+    const btnPrev = document.getElementById('btnPrevStep');
+    const btnNext = document.getElementById('btnNextStep');
+    const stepCounter = document.getElementById('stepCounter');
+
+    function showStep(step) {
+      currentStep = step;
+      stepContents.forEach((el, index) => {
+        el.classList.toggle('hidden', index + 1 !== step);
+      });
+      stepBtns.forEach((btn, index) => {
+        const stepNum = index + 1;
+        if (stepNum === step) {
+          btn.classList.add('step-active');
+          btn.classList.remove('bg-zinc-50', 'dark:bg-zinc-800/40', 'text-zinc-500', 'dark:text-zinc-400');
+        } else {
+          btn.classList.remove('step-active');
+          btn.classList.add('bg-zinc-50', 'dark:bg-zinc-800/40', 'text-zinc-500', 'dark:text-zinc-400');
+        }
+      });
+      btnPrev.disabled = step === 1;
+      btnNext.disabled = step === totalSteps;
+      stepCounter.textContent = `Paso ${step} de ${totalSteps}`;
+    }
+
+    stepBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        showStep(parseInt(btn.dataset.step));
+      });
+    });
+
+    btnPrev.addEventListener('click', () => {
+      if (currentStep > 1) showStep(currentStep - 1);
+    });
+
+    btnNext.addEventListener('click', () => {
+      if (currentStep < totalSteps) showStep(currentStep + 1);
+    });
+
+    // 4. Calculadora de Reposición y Recordatorio
+    const pagesRange = document.getElementById('pagesRange');
+    const pagesDisplay = document.getElementById('pagesDisplay');
+    const installDateInput = document.getElementById('installDate');
+    const weeksEstimate = document.getElementById('weeksEstimate');
+    const dateEstimate = document.getElementById('dateEstimate');
+
+    // Inicializar fecha de hoy por defecto
+    const today = new Date();
+    installDateInput.value = today.toISOString().split('T')[0];
+
+    function calculateEstimate() {
+      const pagesPerDay = parseInt(pagesRange.value);
+      pagesDisplay.textContent = pagesPerDay;
+      const capacity = 1000; // TN-1060 rinde 1000 páginas estándar
+      const totalDays = Math.round(capacity / pagesPerDay);
+      const totalWeeks = Math.max(1, Math.round(totalDays / 7));
+      weeksEstimate.textContent = `~${totalWeeks} ${totalWeeks === 1 ? 'semana' : 'semanas'}`;
+
+      const installDate = new Date(installDateInput.value || today);
+      const dueDate = new Date(installDate);
+      dueDate.setDate(dueDate.getDate() + totalDays);
+
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      dateEstimate.textContent = dueDate.toLocaleDateString('es-MX', options);
+      return dueDate;
+    }
+
+    pagesRange.addEventListener('input', calculateEstimate);
+    installDateInput.addEventListener('change', calculateEstimate);
+    calculateEstimate();
+
+    // Generar archivo .ics para agendar recordatorio
+    document.getElementById('btnSaveReminder')?.addEventListener('click', () => {
+      const dueDate = calculateEstimate();
+      const icsData = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//MB Insumos//MB SmartToner//ES',
+        'BEGIN:VEVENT',
+        `DTSTART:${dueDate.toISOString().replace(/-|:|\.\d+/g, '')}`,
+        `DTEND:${dueDate.toISOString().replace(/-|:|\.\d+/g, '')}`,
+        'SUMMARY:Recordatorio: Reponer Tóner Brother TN-1060 (MB Insumos)',
+        'DESCRIPTION:Tu tóner Brother TN-1060 está próximo a agotarse según tu volumen de impresión. Solicita reposición por WhatsApp al 2717158265.',
+        'LOCATION:MB Insumos Córdoba',
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', 'Recordatorio_Toner_MB_TN1060.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    // 5. Botones de Acción de WhatsApp con Mensajes Personalizados
+    const whatsappPhone = '522717158265';
+
+    function sendWhatsappOrder(tipo = 'reorden') {
+      let mensaje = '';
+      if (tipo === 'reorden') {
+        mensaje = `¡Hola MB Insumos! Escaneé la etiqueta SmartToner de mi cartucho *Brother TN-1060* (Código: ${formattedId}).\n\nNecesito solicitar la reposición de este modelo. ¿Me podrían indicar costo y tiempo de entrega en Córdoba/Fortín?`;
+      } else if (tipo === 'reciclaje') {
+        mensaje = `¡Hola MB Insumos! Escaneé mi tóner *Brother TN-1060* (Código: ${formattedId}) y quiero participar en el programa de *Recolección Responsable* de cartuchos vacíos. ¿Pueden programar la recolección en mi domicilio?`;
+      }
+      const url = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+
+    document.getElementById('btnOrderWhatsapp')?.addEventListener('click', () => sendWhatsappOrder('reorden'));
+    document.getElementById('btnMobileOrder')?.addEventListener('click', () => sendWhatsappOrder('reorden'));
+    document.getElementById('btnRecycleWhatsapp')?.addEventListener('click', () => sendWhatsappOrder('reciclaje'));
+  </script>
+</body>
+</html>

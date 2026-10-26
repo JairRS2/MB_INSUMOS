@@ -52,6 +52,7 @@
         <nav class="hidden lg:flex items-center gap-8">
           <a href="#hero" class="text-sm font-semibold text-white/90 hover:text-white">Inicio</a>
           <a href="#services" class="text-sm font-semibold text-white/90 hover:text-white">Servicios</a>
+          <a href="#smart-toner" class="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-400 hover:text-white"><i class="fa-solid fa-qrcode text-xs"></i> SmartToner <span class="bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">Nuevo</span></a>
           <a href="#software-portfolio" class="text-sm font-semibold text-white/90 hover:text-white">Portfolio Software</a>
           <a href="#why-us" class="text-sm font-semibold text-white/90 hover:text-white">¿Por qué elegirnos?</a>
           <a href="#faq" class="text-sm font-semibold text-white/90 hover:text-white">FAQ</a>
@@ -76,6 +77,10 @@
         <div class="grid gap-2">
           <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#hero">Inicio</a>
           <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#services">Servicios</a>
+          <a class="flex items-center justify-between rounded-md px-3 py-2 text-rose-400 font-semibold hover:bg-white/10" href="#smart-toner">
+            <span><i class="fa-solid fa-qrcode mr-2 text-xs"></i> MB SmartToner</span>
+            <span class="bg-brand text-white text-[10px] px-2 py-0.5 rounded-full font-bold">NUEVO</span>
+          </a>
           <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#software-portfolio">Portfolio Software</a>
           <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#why-us">¿Por qué elegirnos?</a>
           <a class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10" href="#faq">FAQ</a>
@@ -174,10 +179,15 @@
           <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
         </article>
         <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
-          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-boxes"></i></div>
+          <div class="flex items-center justify-between">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-900/30"><i class="fas fa-boxes"></i></div>
+            <span class="rounded-full bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300 text-[10px] font-bold px-2.5 py-0.5">SmartToner QR</span>
+          </div>
           <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Proveeduría de insumos</h3>
-          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Tóner, cartuchos, refacciones y accesorios originales.</p>
-          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
+          <p class="mt-2 text-sm text-gray-600 dark:text-zinc-400">Tóner, cartuchos, refacciones y consumibles con servicio digital integrado.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand">
+            <a href="#smart-toner" class="hover:underline">Conoce SmartToner</a><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i>
+          </div>
           <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
         </article>
         <article class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-lift dark:border-zinc-800 dark:bg-zinc-900">
@@ -187,6 +197,123 @@
           <div class="mt-4 flex items-center gap-2 text-sm font-medium text-brand"><span>Ver detalles</span><i class="fa-solid fa-chevron-right text-xs transition group-hover:translate-x-0.5"></i></div>
           <span class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></span>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Especial: MB SmartToner (Innovación Conectada) -->
+  <section id="smart-toner" class="py-20 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900 border-y border-zinc-200/80 dark:border-zinc-800/80">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Texto y Explicación -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 rounded-full bg-rose-50 px-3.5 py-1 text-xs font-bold text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:ring-rose-800">
+            <i class="fa-solid fa-qrcode text-brand"></i>
+            <span>Innovación Incremental MB</span>
+          </div>
+          <h2 class="mt-4 font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+            MB SmartToner: <br />
+            <span class="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-transparent">Tu tóner conectado a la nube</span>
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-gray-600 dark:text-zinc-300">
+            Convertimos los cartuchos compatibles tradicionales en una experiencia digital completa. Cada cartucho incluye una etiqueta QR personalizada que conecta con su ficha interactiva en la web.
+          </p>
+
+          <!-- 4 Pilares de la Innovación -->
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div class="flex items-center gap-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-brand dark:bg-rose-950/80"><i class="fa-solid fa-book-open text-sm"></i></span>
+                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Guía de instalación</h4>
+              </div>
+              <p class="mt-2 text-xs text-gray-600 dark:text-zinc-400">Instrucciones visuales paso a paso para evitar derrames y fallas de impresión.</p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div class="flex items-center gap-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/80"><i class="fa-brands fa-whatsapp text-base"></i></span>
+                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Recompra en 1 clic</h4>
+              </div>
+              <p class="mt-2 text-xs text-gray-600 dark:text-zinc-400">Pide tu reposición directa por WhatsApp sin tener que recordar el modelo exacto.</p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div class="flex items-center gap-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-950/80"><i class="fa-solid fa-clock-rotate-left text-sm"></i></span>
+                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Recordatorio estimado</h4>
+              </div>
+              <p class="mt-2 text-xs text-gray-600 dark:text-zinc-400">Calcula la fecha de cambio según tus hojas diarias para no quedarte sin imprimir.</p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div class="flex items-center gap-3">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950/80"><i class="fa-solid fa-recycle text-sm"></i></span>
+                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Recolección ecológica</h4>
+              </div>
+              <p class="mt-2 text-xs text-gray-600 dark:text-zinc-400">Recolectamos cartuchos vacíos a domicilio en Córdoba, Fortín y Amatlán.</p>
+            </div>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="smart-toner.html" target="_blank" class="inline-flex items-center gap-2.5 rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white shadow-soft hover:bg-rose-700 transition">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span>Ver Ficha Digital (Brother TN-1060)</span>
+            </a>
+            <a href="etiqueta-smart-toner.html" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-5 py-3.5 text-sm font-semibold text-gray-700 dark:text-zinc-200 hover:bg-gray-50 dark:hover:bg-zinc-700 transition">
+              <i class="fa-solid fa-tags text-rose-500"></i>
+              <span>Generador de Etiquetas con QR</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjeta Visual Interactiva / Mockup Móvil -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm rounded-3xl border-4 border-zinc-900 bg-white dark:bg-zinc-900 shadow-2xl p-6 overflow-hidden">
+            <div class="absolute top-0 inset-x-0 h-4 bg-zinc-900 rounded-b-xl mx-auto w-32"></div>
+
+            <div class="mt-4 flex items-center justify-between border-b pb-3 border-zinc-100 dark:border-zinc-800">
+              <div class="flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white">MB SmartToner Activo</span>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-500">TN1060-PILOT</span>
+            </div>
+
+            <div class="my-5 text-center bg-zinc-50 dark:bg-zinc-800/60 rounded-2xl p-4 border border-zinc-200/80 dark:border-zinc-700/60">
+              <i class="fa-solid fa-box-open text-4xl text-brand mb-2"></i>
+              <h5 class="font-display font-extrabold text-base text-zinc-900 dark:text-white">Brother TN-1060</h5>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400">1,000 páginas • Rendimiento garantizado</p>
+              
+              <div class="mt-3 flex justify-center">
+                <a href="smart-toner.html" class="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-3 py-1.5 text-xs font-bold text-white shadow hover:bg-emerald-600 transition">
+                  <i class="fa-brands fa-whatsapp"></i> Reponer por WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800">
+                <span class="text-zinc-600 dark:text-zinc-400"><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Guía paso a paso</span>
+                <span class="font-semibold text-zinc-800 dark:text-zinc-200">5 pasos</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800">
+                <span class="text-zinc-600 dark:text-zinc-400"><i class="fa-solid fa-calendar-check text-blue-500 mr-1.5"></i> Recordatorio en .ics</span>
+                <span class="font-semibold text-zinc-800 dark:text-zinc-200">Automático</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800">
+                <span class="text-zinc-600 dark:text-zinc-400"><i class="fa-solid fa-truck-fast text-rose-500 mr-1.5"></i> Entrega a domicilio</span>
+                <span class="font-semibold text-zinc-800 dark:text-zinc-200">Córdoba / Fortín</span>
+              </div>
+            </div>
+
+            <div class="mt-4 text-center">
+              <a href="smart-toner.html" target="_blank" class="text-xs font-bold text-brand hover:underline inline-flex items-center gap-1">
+                Abrir experiencia completa <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
