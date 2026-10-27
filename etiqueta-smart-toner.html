@@ -68,28 +68,65 @@
       </div>
 
       <!-- Configuración del Piloto -->
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div>
-          <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">URL Base de Destino:</label>
-          <input type="text" id="baseUrlInput" value="smart-toner.html" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-mono text-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" placeholder="https://www.mbinsumos.com/smart-toner.html" />
-          <p class="text-[11px] text-zinc-500 mt-1">Se le añadirá automáticamente <code class="bg-zinc-100 px-1 rounded">?cid=01</code> hasta <code class="bg-zinc-100 px-1 rounded">?cid=20</code>.</p>
+      <div class="mt-6 space-y-4">
+        <!-- Selector rápido de destinos recomendados -->
+        <div class="p-3 bg-zinc-50 rounded-2xl border border-zinc-200">
+          <span class="block text-xs font-bold text-zinc-700 uppercase mb-2">
+            <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Selecciona el destino del QR (Para evitar error NXDOMAIN en celular):
+          </span>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-rose-600 text-white shadow-sm hover:bg-rose-700 transition" data-url="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html">
+              <i class="fa-solid fa-circle-check mr-1 text-xs"></i> GitHub Live (Inmediato • Listo para escanear)
+            </button>
+            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://jairrs2.github.io/MB_INSUMOS/smart-toner.html">
+              <i class="fa-brands fa-github mr-1"></i> GitHub Pages Oficial
+            </button>
+            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="http://192.168.1.213:5500/smart-toner.html">
+              <i class="fa-solid fa-wifi mr-1"></i> Red Local Wi-Fi (192.168.1.213)
+            </button>
+            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://www.mbinsumos.com/smart-toner.html">
+              <i class="fa-solid fa-globe mr-1"></i> Dominio mbinsumos.com
+            </button>
+          </div>
         </div>
 
-        <div>
-          <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Cantidad de Etiquetas:</label>
-          <select id="quantitySelect" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800 focus:border-rose-500">
-            <option value="20" selected>20 etiquetas (Lote Piloto Completo #1 al #20)</option>
-            <option value="10">10 etiquetas (#1 al #10)</option>
-            <option value="4">4 etiquetas de prueba</option>
-            <option value="1">1 sola etiqueta (#1)</option>
-          </select>
-          <p class="text-[11px] text-zinc-500 mt-1">Diseñado para hojas carta con etiquetas autoadhesivas estándar.</p>
+        <!-- Campos de entrada -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="md:col-span-1">
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-xs font-bold text-zinc-700 uppercase">URL Base de Destino:</label>
+              <a id="testUrlBtn" href="#" target="_blank" class="text-[11px] font-semibold text-rose-600 hover:underline inline-flex items-center gap-1">
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Probar enlace #1
+              </a>
+            </div>
+            <input type="text" id="baseUrlInput" value="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-xs font-mono text-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" placeholder="https://..." />
+            <p class="text-[11px] text-zinc-500 mt-1">Se le añadirá automáticamente <code class="bg-zinc-100 px-1 rounded">?cid=001</code> hasta <code class="bg-zinc-100 px-1 rounded">?cid=020</code>.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Cantidad de Etiquetas:</label>
+            <select id="quantitySelect" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800 focus:border-rose-500">
+              <option value="20" selected>20 etiquetas (Lote Piloto Completo #1 al #20)</option>
+              <option value="10">10 etiquetas (#1 al #10)</option>
+              <option value="4">4 etiquetas de prueba</option>
+              <option value="1">1 sola etiqueta (#1)</option>
+            </select>
+            <p class="text-[11px] text-zinc-500 mt-1">Diseñado para hojas carta con etiquetas autoadhesivas estándar.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Teléfono impreso:</label>
+            <input type="text" id="phoneInput" value="(271) 715 82 65" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800" />
+            <p class="text-[11px] text-zinc-500 mt-1">Línea de soporte y reposición directa MB Insumos.</p>
+          </div>
         </div>
 
-        <div>
-          <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Teléfono impreso:</label>
-          <input type="text" id="phoneInput" value="(271) 715 82 65" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800" />
-          <p class="text-[11px] text-zinc-500 mt-1">Línea de soporte y reposición directa MB Insumos.</p>
+        <!-- Banner de advertencia dinámica si la URL no es válida para celulares -->
+        <div id="urlWarning" class="hidden rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs text-amber-800 flex items-start gap-2.5">
+          <i class="fa-solid fa-triangle-exclamation text-amber-600 mt-0.5 text-sm"></i>
+          <div>
+            <strong class="font-bold">¡Cuidado con la URL!</strong> Para que cualquier teléfono móvil pueda abrir la página al escanear el QR, la URL debe comenzar obligatoriamente con <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">https://</code> o <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">http://</code>. Si colocas un archivo local como <code class="bg-amber-100 px-1 py-0.5 rounded">smart-toner.html</code>, el navegador del celular intentará buscar un dominio web que no existe y arrojará el error <strong>DNS_PROBE_FINISHED_NXDOMAIN</strong>.
+          </div>
         </div>
       </div>
     </div>
@@ -113,12 +150,52 @@
     const baseUrlInput = document.getElementById('baseUrlInput');
     const quantitySelect = document.getElementById('quantitySelect');
     const phoneInput = document.getElementById('phoneInput');
+    const testUrlBtn = document.getElementById('testUrlBtn');
+    const urlWarning = document.getElementById('urlWarning');
+    const presetBtns = document.querySelectorAll('.preset-btn');
+
+    // Botones de presets rápidos
+    presetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        presetBtns.forEach(b => {
+          b.classList.remove('bg-rose-600', 'text-white');
+          b.classList.add('bg-white', 'text-zinc-700', 'border', 'border-zinc-300');
+        });
+        btn.classList.remove('bg-white', 'text-zinc-700', 'border', 'border-zinc-300');
+        btn.classList.add('bg-rose-600', 'text-white');
+        baseUrlInput.value = btn.dataset.url;
+        generateLabels();
+      });
+    });
+
+    function sanitizeBaseUrl(url) {
+      let trimmed = url.trim();
+      if (!trimmed) {
+        trimmed = 'https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html';
+      }
+      // Verificar si tiene protocolo
+      const hasProtocol = /^https?:\/\//i.test(trimmed);
+      if (!hasProtocol) {
+        urlWarning.classList.remove('hidden');
+        // Si parece un archivo local como smart-toner.html, advertir
+        if (trimmed.endsWith('.html') || !trimmed.includes('.')) {
+          // Mantener advertencia visible
+        }
+      } else {
+        urlWarning.classList.add('hidden');
+      }
+      return trimmed;
+    }
 
     function generateLabels() {
       labelsGrid.innerHTML = '';
       const qty = parseInt(quantitySelect.value) || 20;
-      let baseUrl = baseUrlInput.value.trim() || 'smart-toner.html';
+      let baseUrl = sanitizeBaseUrl(baseUrlInput.value);
       const phone = phoneInput.value.trim();
+
+      // Actualizar botón de prueba con el primer cartucho
+      const testTarget = baseUrl.includes('?') ? `${baseUrl}&cid=001` : `${baseUrl}?cid=001`;
+      testUrlBtn.href = testTarget;
 
       for (let i = 1; i <= qty; i++) {
         const cartNum = i.toString().padStart(3, '0');
