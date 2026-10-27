@@ -162,14 +162,14 @@
       <div class="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-4">
         <div>
           <span class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 dark:text-rose-400 uppercase tracking-wider">
-            <i class="fa-solid fa-screwdriver-wrench"></i> Guía Rápida
+            <i class="fa-solid fa-screwdriver-wrench"></i> Guía Rápida Interactiva
           </span>
           <h2 class="mt-1 font-display text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">
             Cómo Instalar tu Tóner Brother TN-1060
           </h2>
         </div>
-        <span class="hidden sm:inline-block rounded-full bg-zinc-100 dark:bg-zinc-800 px-3 py-1 text-xs font-semibold text-zinc-600 dark:text-zinc-300">
-          5 pasos • ~2 min
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-rose-50 dark:bg-rose-950/60 border border-rose-200/80 dark:border-rose-900/50 px-3 py-1 text-xs font-semibold text-rose-700 dark:text-rose-300">
+          <i class="fa-solid fa-circle-play text-[11px]"></i> 5 pasos con video • ~2 min
         </span>
       </div>
 
@@ -202,70 +202,203 @@
       <!-- Contenedor del Paso Activo -->
       <div class="mt-6 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/80 dark:border-zinc-700/60 p-5">
         <!-- Paso 1 -->
-        <div id="stepContent1" class="step-content space-y-3">
-          <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">1</span>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Extraer la unidad de tambor de la impresora</h3>
-          </div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            Abre la cubierta superior o frontal de tu impresora Brother. Toma la manija del conjunto (unidad de tambor DR-1060 con el cartucho viejo) y jálala con suavidad hacia afuera.
-          </p>
-          <div class="rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 p-3 text-xs text-amber-800 dark:text-amber-200 flex items-start gap-2">
-            <i class="fa-solid fa-triangle-exclamation mt-0.5 text-amber-500"></i>
-            <span>Coloca la unidad sobre una superficie plana y limpia, preferiblemente sobre una hoja de papel para evitar manchar con residuos de polvo.</span>
+        <div id="stepContent1" class="step-content">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand text-white font-bold">1</span>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white leading-snug">Extraer la unidad de tambor de la impresora</h3>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300">
+                Abre la cubierta superior o frontal de tu impresora Brother. Toma la manija del conjunto (unidad de tambor DR-1060 con el cartucho viejo) y jálala con suavidad hacia afuera.
+              </p>
+              <div class="rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 p-3 text-xs text-amber-800 dark:text-amber-200 flex items-start gap-2">
+                <i class="fa-solid fa-triangle-exclamation mt-0.5 text-amber-500 shrink-0"></i>
+                <span>Coloca la unidad sobre una superficie plana y limpia, preferiblemente sobre una hoja de papel para evitar manchar con residuos de polvo.</span>
+              </div>
+            </div>
+
+            <!-- Video demostrativo Paso 1 -->
+            <div class="w-full">
+              <div class="flex items-center justify-between pb-1.5 px-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                <span class="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 font-semibold text-xs">
+                  <i class="fa-solid fa-circle-play"></i> Video demostrativo
+                </span>
+                <span class="text-[11px] bg-zinc-200/80 dark:bg-zinc-700/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded-full font-medium">0:23 min</span>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl bg-black border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  class="w-full aspect-video object-cover bg-black block"
+                  src="videos/Paso1.mp4"
+                >
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Paso 2 -->
-        <div id="stepContent2" class="step-content hidden space-y-3">
-          <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">2</span>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Desempacar el nuevo TN-1060 y retirar el protector</h3>
-          </div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            Saca el cartucho nuevo de su bolsa protectora antiestática. Retira con cuidado la <strong>tapa o precinto protector naranja</strong> que cubre el rodillo del cartucho.
-          </p>
-          <div class="rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 p-3 text-xs text-rose-800 dark:text-rose-200 flex items-start gap-2">
-            <i class="fa-solid fa-hand-dots mt-0.5 text-rose-500"></i>
-            <span><strong>¡Atención!</strong> No toques el rodillo negro ni los engranes laterales para evitar rayas o marcas en tus futuras impresiones.</span>
+        <div id="stepContent2" class="step-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand text-white font-bold">2</span>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white leading-snug">Desempacar el nuevo TN-1060 y retirar el protector</h3>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300">
+                Saca el cartucho nuevo de su bolsa protectora antiestática. Retira con cuidado la <strong>tapa o precinto protector naranja</strong> que cubre el rodillo del cartucho.
+              </p>
+              <div class="rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 p-3 text-xs text-rose-800 dark:text-rose-200 flex items-start gap-2">
+                <i class="fa-solid fa-hand-dots mt-0.5 text-rose-500 shrink-0"></i>
+                <span><strong>¡Atención!</strong> No toques el rodillo negro ni los engranes laterales para evitar rayas o marcas en tus futuras impresiones.</span>
+              </div>
+            </div>
+
+            <!-- Video demostrativo Paso 2 -->
+            <div class="w-full">
+              <div class="flex items-center justify-between pb-1.5 px-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                <span class="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 font-semibold text-xs">
+                  <i class="fa-solid fa-circle-play"></i> Video demostrativo
+                </span>
+                <span class="text-[11px] bg-zinc-200/80 dark:bg-zinc-700/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded-full font-medium">0:19 min</span>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl bg-black border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  class="w-full aspect-video object-cover bg-black block"
+                  src="videos/Paso2.mp4"
+                >
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Paso 3 -->
-        <div id="stepContent3" class="step-content hidden space-y-3">
-          <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">3</span>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Agitar suavemente de lado a lado</h3>
-          </div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            Sostén el cartucho con ambas manos de forma horizontal y muévelo suavemente de izquierda a derecha unas <strong>5 o 6 veces</strong>.
-          </p>
-          <div class="rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 p-3 text-xs text-blue-800 dark:text-blue-200 flex items-start gap-2">
-            <i class="fa-solid fa-circle-info mt-0.5 text-blue-500"></i>
-            <span>Esto distribuye el polvo de tóner de manera homogénea en el depósito interno, garantizando máxima calidad desde la primera hoja.</span>
+        <div id="stepContent3" class="step-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand text-white font-bold">3</span>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white leading-snug">Agitar suavemente de lado a lado</h3>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300">
+                Sostén el cartucho con ambas manos de forma horizontal y muévelo suavemente de izquierda a derecha unas <strong>5 o 6 veces</strong>.
+              </p>
+              <div class="rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 p-3 text-xs text-blue-800 dark:text-blue-200 flex items-start gap-2">
+                <i class="fa-solid fa-circle-info mt-0.5 text-blue-500 shrink-0"></i>
+                <span>Esto distribuye el polvo de tóner de manera homogénea en el depósito interno, garantizando máxima calidad desde la primera hoja.</span>
+              </div>
+            </div>
+
+            <!-- Video demostrativo Paso 3 -->
+            <div class="w-full">
+              <div class="flex items-center justify-between pb-1.5 px-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                <span class="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 font-semibold text-xs">
+                  <i class="fa-solid fa-circle-play"></i> Video demostrativo
+                </span>
+                <span class="text-[11px] bg-zinc-200/80 dark:bg-zinc-700/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded-full font-medium">0:17 min</span>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl bg-black border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  class="w-full aspect-video object-cover bg-black block"
+                  src="videos/Paso3.mp4"
+                >
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Paso 4 -->
-        <div id="stepContent4" class="step-content hidden space-y-3">
-          <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">4</span>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Insertar el cartucho en la unidad de tambor</h3>
+        <div id="stepContent4" class="step-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand text-white font-bold">4</span>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white leading-snug">Insertar el cartucho en la unidad de tambor</h3>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300">
+                En la unidad de tambor DR-1060, presiona la palanquita verde hacia abajo para liberar el cartucho vacío y retíralo. Luego, coloca el cartucho nuevo y empújalo firmemente hasta escuchar un <strong>¡clic!</strong> audible. La palanquita verde se elevará automáticamente al quedar asegurado.
+              </p>
+              <div class="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 p-3 text-xs text-emerald-800 dark:text-emerald-200 flex items-start gap-2">
+                <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500 shrink-0"></i>
+                <span>Verifica que la palanca verde haya retornado a su posición bloqueada para asegurar que el tóner quede firme.</span>
+              </div>
+            </div>
+
+            <!-- Video demostrativo Paso 4 -->
+            <div class="w-full">
+              <div class="flex items-center justify-between pb-1.5 px-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                <span class="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 font-semibold text-xs">
+                  <i class="fa-solid fa-circle-play"></i> Video demostrativo
+                </span>
+                <span class="text-[11px] bg-zinc-200/80 dark:bg-zinc-700/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded-full font-medium">0:17 min</span>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl bg-black border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  class="w-full aspect-video object-cover bg-black block"
+                  src="videos/Paso4.mp4"
+                >
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+            </div>
           </div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            En la unidad de tambor DR-1060, presiona la palanquita verde hacia abajo para liberar el cartucho vacío y retíralo. Luego, coloca el cartucho nuevo y empújalo firmemente hasta escuchar un <strong>¡clic!</strong> audible. La palanquita verde se elevará automáticamente al quedar asegurado.
-          </p>
         </div>
 
         <!-- Paso 5 -->
-        <div id="stepContent5" class="step-content hidden space-y-3">
-          <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white font-bold">5</span>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white">Limpiar el hilo corona e instalar en la impresora</h3>
+        <div id="stepContent5" class="step-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand text-white font-bold">5</span>
+                <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white leading-snug">Limpiar el hilo corona e instalar en la impresora</h3>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-300">
+                Desliza la pequeña pestaña verde del tambor de lado a lado varias veces para limpiar el hilo corona interno. Asegúrate de <strong>regresar la pestaña a su posición inicial (icono de flecha)</strong>. Vuelve a colocar todo el conjunto en la impresora y cierra la tapa. ¡Listo para imprimir!
+              </p>
+              <div class="rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 p-3 text-xs text-blue-800 dark:text-blue-200 flex items-start gap-2">
+                <i class="fa-solid fa-arrow-right mt-0.5 text-blue-500 shrink-0"></i>
+                <span><strong>Punto clave:</strong> Dejar la pestaña en la posición marcada con la flecha evita la aparición de bandas o rayas negras en tus copias.</span>
+              </div>
+            </div>
+
+            <!-- Video demostrativo Paso 5 -->
+            <div class="w-full">
+              <div class="flex items-center justify-between pb-1.5 px-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                <span class="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 font-semibold text-xs">
+                  <i class="fa-solid fa-circle-play"></i> Video demostrativo
+                </span>
+                <span class="text-[11px] bg-zinc-200/80 dark:bg-zinc-700/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded-full font-medium">0:20 min</span>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl bg-black border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                <video
+                  controls
+                  preload="metadata"
+                  playsinline
+                  class="w-full aspect-video object-cover bg-black block"
+                  src="videos/Paso5.mp4"
+                >
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+            </div>
           </div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300">
-            Desliza la pequeña pestaña verde del tambor de lado a lado varias veces para limpiar el hilo corona interno. Asegúrate de <strong>regresar la pestaña a su posición inicial (icono de flecha)</strong>. Vuelve a colocar todo el conjunto en la impresora y cierra la tapa. ¡Listo para imprimir!
-          </p>
         </div>
 
         <!-- Botones de Navegación del Paso -->
@@ -506,6 +639,14 @@
 
     function showStep(step) {
       currentStep = step;
+
+      // Pausar cualquier video en reproducción al cambiar de paso
+      document.querySelectorAll('#guia video').forEach(v => {
+        if (!v.paused) {
+          v.pause();
+        }
+      });
+
       stepContents.forEach((el, index) => {
         el.classList.toggle('hidden', index + 1 !== step);
       });
