@@ -147,6 +147,62 @@
           </div>
         </div>
 
+        <!-- Tablero de Objetivos e Indicadores del Piloto (Exclusivo Administrador) -->
+        <div class="mt-6 p-5 rounded-2xl bg-zinc-50 border border-zinc-200">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-zinc-200 pb-3 mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 uppercase tracking-wider">
+              <i class="fa-solid fa-chart-pie"></i> Medición y Metas del Piloto (Propuesta Oficial)
+            </span>
+            <span class="text-xs text-zinc-500 font-semibold">
+              <i class="fa-solid fa-clock-rotate-left mr-1"></i> Periodo: 3 meses • Córdoba, Fortín y Amatlán
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Meta 1 -->
+            <div class="rounded-xl bg-white p-3.5 border border-zinc-200 shadow-sm">
+              <div class="flex items-center justify-between text-xs text-zinc-500 mb-1">
+                <span>Meta 1: Cartuchos Piloto</span>
+                <span class="font-bold text-emerald-600"><i class="fa-solid fa-check-circle"></i> Listo</span>
+              </div>
+              <p class="text-2xl font-display font-extrabold text-zinc-900">20 / 20</p>
+              <p class="text-[11px] text-zinc-500 mt-0.5">TN1060-001 al TN1060-020</p>
+              <div class="w-full bg-zinc-100 h-1.5 rounded-full mt-2.5 overflow-hidden">
+                <div class="bg-emerald-500 h-full rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Meta 2 -->
+            <div class="rounded-xl bg-white p-3.5 border border-zinc-200 shadow-sm">
+              <div class="flex items-center justify-between text-xs text-zinc-500 mb-1">
+                <span>Meta 2: Clientes que Escanean</span>
+                <span class="font-bold text-rose-600">Meta: 50% (10 unid.)</span>
+              </div>
+              <div class="flex items-baseline gap-1.5">
+                <p id="adminUniqueScansCount" class="text-2xl font-display font-extrabold text-zinc-900">0</p>
+                <span class="text-xs text-zinc-500">cartuchos únicos escaneados</span>
+              </div>
+              <p class="text-[11px] text-zinc-500 mt-0.5">Escaneos totales registrados: <strong id="adminTotalScansCount" class="text-zinc-800">0</strong></p>
+              <div class="w-full bg-zinc-100 h-1.5 rounded-full mt-2.5 overflow-hidden">
+                <div id="adminScanProgressBar" class="bg-rose-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <!-- Meta 3 -->
+            <div class="rounded-xl bg-white p-3.5 border border-zinc-200 shadow-sm">
+              <div class="flex items-center justify-between text-xs text-zinc-500 mb-1">
+                <span>Meta 3: Tasa de Recompra</span>
+                <span class="font-bold text-blue-600">Meta: 25% (5 unid.)</span>
+              </div>
+              <p class="text-2xl font-display font-extrabold text-zinc-900">Trazable</p>
+              <p class="text-[11px] text-zinc-500 mt-0.5">Vía folio en WhatsApp al recibir pedidos</p>
+              <div class="w-full bg-zinc-100 h-1.5 rounded-full mt-2.5 overflow-hidden">
+                <div class="bg-blue-500 h-full rounded-full" style="width: 25%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Configuración del Piloto -->
         <div class="mt-6 space-y-4">
           <!-- Selector rápido de destinos recomendados -->
@@ -242,12 +298,31 @@
       return localStorage.getItem(PIN_STORAGE_KEY) || 'mb2026';
     }
 
+    function updateAdminMetrics() {
+      const scanKey = 'mb_smarttoner_scans';
+      const scans = JSON.parse(localStorage.getItem(scanKey) || '{}');
+      const totalScans = Object.values(scans).reduce((a, b) => a + b, 0);
+      const uniqueScans = Object.keys(scans).length;
+
+      const totalEl = document.getElementById('adminTotalScansCount');
+      const uniqueEl = document.getElementById('adminUniqueScansCount');
+      const barEl = document.getElementById('adminScanProgressBar');
+
+      if (totalEl) totalEl.textContent = totalScans;
+      if (uniqueEl) uniqueEl.textContent = uniqueScans;
+      if (barEl) {
+        const progressPercent = Math.min(100, (uniqueScans / 10) * 100);
+        barEl.style.width = `${progressPercent}%`;
+      }
+    }
+
     function checkAuth() {
       const isAuth = sessionStorage.getItem(AUTH_SESSION_KEY) === 'true' || localStorage.getItem(AUTH_SESSION_KEY) === 'true';
       if (isAuth) {
         authGate.classList.add('hidden');
         adminMainContainer.classList.remove('hidden');
         generateLabels();
+        updateAdminMetrics();
       } else {
         authGate.classList.remove('hidden');
         adminMainContainer.classList.add('hidden');
