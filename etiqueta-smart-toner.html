@@ -14,6 +14,13 @@
     .font-display { font-family: 'Montserrat', system-ui, sans-serif; }
     .font-body { font-family: 'Poppins', system-ui, sans-serif; }
     
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    .shake-anim { animation: shake 0.4s ease-in-out; }
+
     /* Configuración de Impresión */
     @media print {
       body {
@@ -21,7 +28,10 @@
         color: black !important;
         padding: 0 !important;
       }
-      .no-print {
+      .no-print, #authGate {
+        display: none !important;
+      }
+      #adminMainContainer.hidden {
         display: none !important;
       }
       .print-page {
@@ -40,109 +50,268 @@
 </head>
 <body class="font-body bg-zinc-100 text-zinc-800 min-h-screen py-8 px-4 antialiased">
 
-  <!-- Panel de Control y Configuración (Oculto en Impresión) -->
-  <div class="mx-auto max-w-5xl mb-8 no-print">
-    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-zinc-200">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-zinc-200 pb-6">
-        <div class="flex items-center gap-3">
-          <img src="img/LOGO.jpg" alt="MB Insumos" class="h-12 w-12 rounded-xl object-cover ring-1 ring-zinc-300 shadow" />
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="rounded bg-rose-100 text-rose-700 text-xs font-bold px-2 py-0.5">PILOTO 20 UNIDADES</span>
-              <span class="text-xs text-zinc-500 font-medium">Brother TN-1060</span>
-            </div>
-            <h1 class="font-display font-extrabold text-2xl text-zinc-900">Generador de Etiquetas Físicas con QR</h1>
-          </div>
-        </div>
+  <!-- 1. Pantalla de Bloqueo / Autenticación de Administrador -->
+  <div id="authGate" class="flex min-h-[80vh] items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-3xl p-8 shadow-xl border border-zinc-200 text-center relative overflow-hidden">
+      <div class="h-2 bg-gradient-to-r from-rose-500 to-rose-700 absolute top-0 inset-x-0"></div>
 
-        <div class="flex items-center gap-3 w-full sm:w-auto">
-          <button onclick="window.print()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-2xl bg-rose-600 px-6 py-3 font-bold text-white shadow hover:bg-rose-700 transition">
-            <i class="fa-solid fa-print"></i>
-            <span>Imprimir Hoja de Etiquetas</span>
-          </button>
-          <a href="smart-toner.html" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-300 px-4 py-3 font-semibold text-zinc-700 hover:bg-zinc-50 transition text-sm">
-            <i class="fa-solid fa-mobile-screen"></i>
-            <span>Ver Ficha Web</span>
-          </a>
-        </div>
+      <div class="mx-auto h-16 w-16 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center shadow-inner mb-4 ring-1 ring-rose-100">
+        <i class="fa-solid fa-lock text-2xl"></i>
       </div>
 
-      <!-- Configuración del Piloto -->
-      <div class="mt-6 space-y-4">
-        <!-- Selector rápido de destinos recomendados -->
-        <div class="p-3 bg-zinc-50 rounded-2xl border border-zinc-200">
-          <span class="block text-xs font-bold text-zinc-700 uppercase mb-2">
-            <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Destino del Código QR:
-          </span>
-          <div class="flex flex-wrap gap-2 text-xs">
-            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-rose-600 text-white shadow-sm hover:bg-rose-700 transition" data-url="https://mbinsumos.com/smart-toner.html">
-              <i class="fa-solid fa-globe mr-1 text-xs"></i> Dominio Oficial mbinsumos.com (Recomendado)
-            </button>
-            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html">
-              <i class="fa-solid fa-circle-check mr-1 text-xs"></i> GitHub Live (Respaldo)
-            </button>
-            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="http://192.168.1.213:5500/smart-toner.html">
-              <i class="fa-solid fa-wifi mr-1"></i> Red Local Wi-Fi (192.168.1.213)
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1 text-xs font-bold text-zinc-600 uppercase tracking-wider mb-2">
+        <i class="fa-solid fa-shield-halved text-rose-600"></i> Área Administrativa
+      </span>
+
+      <h1 class="font-display font-extrabold text-2xl text-zinc-900 tracking-tight">Acceso Restringido</h1>
+      <p class="text-xs text-zinc-500 mt-1 max-w-xs mx-auto">
+        Esta herramienta es de uso exclusivo para el personal de <strong>MB Insumos</strong> para la generación y emisión de etiquetas físicas.
+      </p>
+
+      <form id="authForm" class="mt-6 space-y-4 text-left">
+        <div>
+          <label for="adminPinInput" class="block text-xs font-bold text-zinc-700 uppercase mb-1">
+            PIN de Administrador:
+          </label>
+          <div class="relative">
+            <input type="password" id="adminPinInput" required placeholder="Ingresa tu clave de acceso" class="w-full rounded-xl border border-zinc-300 px-4 py-3 text-sm text-zinc-900 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 pr-10 font-mono" autofocus />
+            <button type="button" id="togglePasswordBtn" class="absolute right-3 top-3 text-zinc-400 hover:text-zinc-600 text-sm" tabindex="-1">
+              <i class="fa-regular fa-eye"></i>
             </button>
           </div>
         </div>
 
-        <!-- Campos de entrada -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="md:col-span-1">
-            <div class="flex items-center justify-between mb-1">
-              <label class="block text-xs font-bold text-zinc-700 uppercase">URL Base de Destino:</label>
-              <a id="testUrlBtn" href="#" target="_blank" class="text-[11px] font-semibold text-rose-600 hover:underline inline-flex items-center gap-1">
-                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Probar enlace #1
-              </a>
-            </div>
-            <input type="text" id="baseUrlInput" value="https://mbinsumos.com/smart-toner.html" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-xs font-mono text-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" placeholder="https://mbinsumos.com/smart-toner.html" />
-            <p class="text-[11px] text-zinc-500 mt-1">Se le añadirá automáticamente <code class="bg-zinc-100 px-1 rounded">?cid=001</code> hasta <code class="bg-zinc-100 px-1 rounded">?cid=020</code>.</p>
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Cantidad de Etiquetas:</label>
-            <select id="quantitySelect" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800 focus:border-rose-500">
-              <option value="20" selected>20 etiquetas (Lote Piloto Completo #1 al #20)</option>
-              <option value="10">10 etiquetas (#1 al #10)</option>
-              <option value="4">4 etiquetas de prueba</option>
-              <option value="1">1 sola etiqueta (#1)</option>
-            </select>
-            <p class="text-[11px] text-zinc-500 mt-1">Diseñado para hojas carta con etiquetas autoadhesivas estándar.</p>
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Teléfono impreso:</label>
-            <input type="text" id="phoneInput" value="(271) 715 82 65" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800" />
-            <p class="text-[11px] text-zinc-500 mt-1">Línea de soporte y reposición directa MB Insumos.</p>
-          </div>
+        <div class="flex items-center justify-between text-xs">
+          <label class="flex items-center gap-2 cursor-pointer text-zinc-600">
+            <input type="checkbox" id="rememberSession" class="rounded accent-rose-600" />
+            <span>Recordar en este equipo</span>
+          </label>
+          <span class="text-zinc-400 text-[11px]">PIN inicial: <strong class="text-zinc-600">mb2026</strong></span>
         </div>
 
-        <!-- Banner de advertencia dinámica si la URL no es válida para celulares -->
-        <div id="urlWarning" class="hidden rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs text-amber-800 flex items-start gap-2.5">
-          <i class="fa-solid fa-triangle-exclamation text-amber-600 mt-0.5 text-sm"></i>
-          <div>
-            <strong class="font-bold">¡Cuidado con la URL!</strong> Para que cualquier teléfono móvil pueda abrir la página al escanear el QR, la URL debe comenzar obligatoriamente con <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">https://</code> o <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">http://</code>. Si colocas un archivo local como <code class="bg-amber-100 px-1 py-0.5 rounded">smart-toner.html</code>, el navegador del celular intentará buscar un dominio web que no existe y arrojará el error <strong>DNS_PROBE_FINISHED_NXDOMAIN</strong>.
-          </div>
+        <div id="authErrorAlert" class="hidden rounded-xl bg-rose-50 border border-rose-200 p-2.5 text-xs text-rose-700 flex items-center gap-2">
+          <i class="fa-solid fa-circle-exclamation text-rose-500 text-sm"></i>
+          <span>PIN incorrecto. Intenta de nuevo o contacta al administrador.</span>
         </div>
+
+        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-rose-600 py-3.5 text-sm font-bold text-white shadow-soft hover:bg-rose-700 transition">
+          <i class="fa-solid fa-key text-xs"></i>
+          <span>Desbloquear Generador</span>
+        </button>
+      </form>
+
+      <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500">
+        <a href="index.html" class="hover:text-rose-600 transition inline-flex items-center gap-1 font-semibold">
+          <i class="fa-solid fa-arrow-left text-[10px]"></i> Volver a mbinsumos.com
+        </a>
+        <span class="text-[11px] text-zinc-400">MB Insumos © 2026</span>
       </div>
     </div>
   </div>
 
-  <!-- Contenedor Imprimible: Cuadrícula de Etiquetas -->
-  <div class="print-page mx-auto max-w-5xl bg-white rounded-3xl p-8 shadow-sm border border-zinc-200">
-    <div class="no-print mb-4 flex items-center justify-between text-xs text-zinc-500 border-b pb-2">
-      <span>Vista previa de impresión (Escala real: ~75mm × 42mm cada etiqueta)</span>
-      <span class="font-semibold text-zinc-700">Listo para imprimir</span>
+  <!-- 2. Panel Principal del Administrador (Protegido) -->
+  <div id="adminMainContainer" class="hidden">
+    <!-- Panel de Control y Configuración (Oculto en Impresión) -->
+    <div class="mx-auto max-w-5xl mb-8 no-print">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-zinc-200">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-zinc-200 pb-6">
+          <div class="flex items-center gap-3">
+            <img src="img/LOGO.jpg" alt="MB Insumos" class="h-12 w-12 rounded-xl object-cover ring-1 ring-zinc-300 shadow" />
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="rounded bg-rose-100 text-rose-700 text-xs font-bold px-2 py-0.5">PILOTO 20 UNIDADES</span>
+                <span class="text-xs text-zinc-500 font-medium">Brother TN-1060</span>
+                <span class="rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 inline-flex items-center gap-1">
+                  <i class="fa-solid fa-lock-open text-[9px]"></i> Admin Autorizado
+                </span>
+              </div>
+              <h1 class="font-display font-extrabold text-2xl text-zinc-900">Generador de Etiquetas Físicas con QR</h1>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5 w-full sm:w-auto">
+            <button onclick="window.print()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-2xl bg-rose-600 px-5 py-3 font-bold text-white shadow hover:bg-rose-700 transition">
+              <i class="fa-solid fa-print"></i>
+              <span>Imprimir Etiquetas</span>
+            </button>
+            <a href="smart-toner.html" target="_blank" class="inline-flex items-center justify-center gap-1.5 rounded-2xl border border-zinc-300 px-3.5 py-3 font-semibold text-zinc-700 hover:bg-zinc-50 transition text-xs">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span>Ficha Web</span>
+            </a>
+            <button id="btnCambiarPin" title="Cambiar clave de acceso" class="inline-flex items-center justify-center p-3 rounded-2xl border border-zinc-300 text-zinc-600 hover:bg-zinc-50 transition text-sm">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+            <button id="btnLogout" title="Cerrar sesión" class="inline-flex items-center justify-center p-3 rounded-2xl border border-rose-200 text-rose-600 hover:bg-rose-50 transition text-sm">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Configuración del Piloto -->
+        <div class="mt-6 space-y-4">
+          <!-- Selector rápido de destinos recomendados -->
+          <div class="p-3 bg-zinc-50 rounded-2xl border border-zinc-200">
+            <span class="block text-xs font-bold text-zinc-700 uppercase mb-2">
+              <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Destino del Código QR:
+            </span>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-rose-600 text-white shadow-sm hover:bg-rose-700 transition" data-url="https://mbinsumos.com/smart-toner.html">
+                <i class="fa-solid fa-globe mr-1 text-xs"></i> Dominio Oficial mbinsumos.com (Recomendado)
+              </button>
+              <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html">
+                <i class="fa-solid fa-circle-check mr-1 text-xs"></i> GitHub Live (Respaldo)
+              </button>
+              <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="http://192.168.1.213:5500/smart-toner.html">
+                <i class="fa-solid fa-wifi mr-1"></i> Red Local Wi-Fi (192.168.1.213)
+              </button>
+            </div>
+          </div>
+
+          <!-- Campos de entrada -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="md:col-span-1">
+              <div class="flex items-center justify-between mb-1">
+                <label class="block text-xs font-bold text-zinc-700 uppercase">URL Base de Destino:</label>
+                <a id="testUrlBtn" href="#" target="_blank" class="text-[11px] font-semibold text-rose-600 hover:underline inline-flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Probar enlace #1
+                </a>
+              </div>
+              <input type="text" id="baseUrlInput" value="https://mbinsumos.com/smart-toner.html" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-xs font-mono text-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" placeholder="https://mbinsumos.com/smart-toner.html" />
+              <p class="text-[11px] text-zinc-500 mt-1">Se le añadirá automáticamente <code class="bg-zinc-100 px-1 rounded">?cid=001</code> hasta <code class="bg-zinc-100 px-1 rounded">?cid=020</code>.</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Cantidad de Etiquetas:</label>
+              <select id="quantitySelect" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800 focus:border-rose-500">
+                <option value="20" selected>20 etiquetas (Lote Piloto Completo #1 al #20)</option>
+                <option value="10">10 etiquetas (#1 al #10)</option>
+                <option value="4">4 etiquetas de prueba</option>
+                <option value="1">1 sola etiqueta (#1)</option>
+              </select>
+              <p class="text-[11px] text-zinc-500 mt-1">Diseñado para hojas carta con etiquetas autoadhesivas estándar.</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-zinc-700 uppercase mb-1">Teléfono impreso:</label>
+              <input type="text" id="phoneInput" value="(271) 715 82 65" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm font-semibold text-zinc-800" />
+              <p class="text-[11px] text-zinc-500 mt-1">Línea de soporte y reposición directa MB Insumos.</p>
+            </div>
+          </div>
+
+          <!-- Banner de advertencia dinámica si la URL no es válida para celulares -->
+          <div id="urlWarning" class="hidden rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs text-amber-800 flex items-start gap-2.5">
+            <i class="fa-solid fa-triangle-exclamation text-amber-600 mt-0.5 text-sm"></i>
+            <div>
+              <strong class="font-bold">¡Cuidado con la URL!</strong> Para que cualquier teléfono móvil pueda abrir la página al escanear el QR, la URL debe comenzar obligatoriamente con <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">https://</code> o <code class="bg-amber-100 px-1 py-0.5 rounded font-mono font-bold">http://</code>. Si colocas un archivo local como <code class="bg-amber-100 px-1 py-0.5 rounded">smart-toner.html</code>, el navegador del celular intentará buscar un dominio web que no existe y arrojará el error <strong>DNS_PROBE_FINISHED_NXDOMAIN</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Grid de Etiquetas -->
-    <div id="labelsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <!-- Se llenará dinámicamente con JavaScript -->
+    <!-- Contenedor Imprimible: Cuadrícula de Etiquetas -->
+    <div class="print-page mx-auto max-w-5xl bg-white rounded-3xl p-8 shadow-sm border border-zinc-200">
+      <div class="no-print mb-4 flex items-center justify-between text-xs text-zinc-500 border-b pb-2">
+        <span>Vista previa de impresión (Escala real: ~75mm × 42mm cada etiqueta)</span>
+        <span class="font-semibold text-zinc-700">Listo para imprimir</span>
+      </div>
+
+      <!-- Grid de Etiquetas -->
+      <div id="labelsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Se llenará dinámicamente con JavaScript -->
+      </div>
     </div>
   </div>
 
   <script>
+    // --- Lógica de Autenticación de Administrador ---
+    const authGate = document.getElementById('authGate');
+    const adminMainContainer = document.getElementById('adminMainContainer');
+    const authForm = document.getElementById('authForm');
+    const adminPinInput = document.getElementById('adminPinInput');
+    const authErrorAlert = document.getElementById('authErrorAlert');
+    const rememberSession = document.getElementById('rememberSession');
+    const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+    const btnLogout = document.getElementById('btnLogout');
+    const btnCambiarPin = document.getElementById('btnCambiarPin');
+
+    const PIN_STORAGE_KEY = 'mb_admin_pin';
+    const AUTH_SESSION_KEY = 'mb_admin_auth_status';
+
+    function getMasterPin() {
+      return localStorage.getItem(PIN_STORAGE_KEY) || 'mb2026';
+    }
+
+    function checkAuth() {
+      const isAuth = sessionStorage.getItem(AUTH_SESSION_KEY) === 'true' || localStorage.getItem(AUTH_SESSION_KEY) === 'true';
+      if (isAuth) {
+        authGate.classList.add('hidden');
+        adminMainContainer.classList.remove('hidden');
+        generateLabels();
+      } else {
+        authGate.classList.remove('hidden');
+        adminMainContainer.classList.add('hidden');
+      }
+    }
+
+    // Toggle ver contraseña
+    togglePasswordBtn?.addEventListener('click', () => {
+      const isPassword = adminPinInput.type === 'password';
+      adminPinInput.type = isPassword ? 'text' : 'password';
+      togglePasswordBtn.innerHTML = isPassword ? '<i class="fa-regular fa-eye-slash"></i>' : '<i class="fa-regular fa-eye"></i>';
+    });
+
+    // Formulario de login
+    authForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const enteredPin = adminPinInput.value.trim();
+      const currentPin = getMasterPin();
+
+      if (enteredPin === currentPin) {
+        authErrorAlert.classList.add('hidden');
+        if (rememberSession.checked) {
+          localStorage.setItem(AUTH_SESSION_KEY, 'true');
+        } else {
+          sessionStorage.setItem(AUTH_SESSION_KEY, 'true');
+        }
+        checkAuth();
+      } else {
+        authErrorAlert.classList.remove('hidden');
+        authForm.classList.remove('shake-anim');
+        void authForm.offsetWidth; // reset animation
+        authForm.classList.add('shake-anim');
+        adminPinInput.focus();
+        adminPinInput.select();
+      }
+    });
+
+    // Cerrar sesión
+    btnLogout?.addEventListener('click', () => {
+      sessionStorage.removeItem(AUTH_SESSION_KEY);
+      localStorage.removeItem(AUTH_SESSION_KEY);
+      adminPinInput.value = '';
+      authErrorAlert.classList.add('hidden');
+      checkAuth();
+    });
+
+    // Cambiar PIN de administrador
+    btnCambiarPin?.addEventListener('click', () => {
+      const currentPin = getMasterPin();
+      const verify = prompt('Ingresa el PIN actual de administrador:');
+      if (verify !== currentPin) {
+        alert('PIN actual incorrecto.');
+        return;
+      }
+      const newPin = prompt('Ingresa el nuevo PIN de administrador (mínimo 4 caracteres):');
+      if (newPin && newPin.trim().length >= 4) {
+        localStorage.setItem(PIN_STORAGE_KEY, newPin.trim());
+        alert('¡PIN de administrador actualizado exitosamente! Ahora tu clave es: ' + newPin.trim());
+      } else if (newPin !== null) {
+        alert('El PIN debe tener al menos 4 caracteres.');
+      }
+    });
+
+    // --- Lógica de Generación de Etiquetas ---
     const labelsGrid = document.getElementById('labelsGrid');
     const baseUrlInput = document.getElementById('baseUrlInput');
     const quantitySelect = document.getElementById('quantitySelect');
@@ -181,6 +350,8 @@
     }
 
     function generateLabels() {
+      if (adminMainContainer.classList.contains('hidden')) return;
+
       labelsGrid.innerHTML = '';
       const qty = parseInt(quantitySelect.value) || 20;
       let baseUrl = sanitizeBaseUrl(baseUrlInput.value);
@@ -244,10 +415,10 @@
       }
     }
 
-    // Inicializar
-    generateLabels();
+    // Inicializar autenticación al cargar
+    checkAuth();
 
-    // Event listeners
+    // Event listeners de controles
     baseUrlInput.addEventListener('input', generateLabels);
     quantitySelect.addEventListener('change', generateLabels);
     phoneInput.addEventListener('input', generateLabels);
