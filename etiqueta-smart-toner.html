@@ -72,20 +72,17 @@
         <!-- Selector rápido de destinos recomendados -->
         <div class="p-3 bg-zinc-50 rounded-2xl border border-zinc-200">
           <span class="block text-xs font-bold text-zinc-700 uppercase mb-2">
-            <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Selecciona el destino del QR (Para evitar error NXDOMAIN en celular):
+            <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Destino del Código QR:
           </span>
           <div class="flex flex-wrap gap-2 text-xs">
-            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-rose-600 text-white shadow-sm hover:bg-rose-700 transition" data-url="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html">
-              <i class="fa-solid fa-circle-check mr-1 text-xs"></i> GitHub Live (Inmediato • Listo para escanear)
+            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-rose-600 text-white shadow-sm hover:bg-rose-700 transition" data-url="https://mbinsumos.com/smart-toner.html">
+              <i class="fa-solid fa-globe mr-1 text-xs"></i> Dominio Oficial mbinsumos.com (Recomendado)
             </button>
-            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://jairrs2.github.io/MB_INSUMOS/smart-toner.html">
-              <i class="fa-brands fa-github mr-1"></i> GitHub Pages Oficial
+            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html">
+              <i class="fa-solid fa-circle-check mr-1 text-xs"></i> GitHub Live (Respaldo)
             </button>
             <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="http://192.168.1.213:5500/smart-toner.html">
               <i class="fa-solid fa-wifi mr-1"></i> Red Local Wi-Fi (192.168.1.213)
-            </button>
-            <button type="button" class="preset-btn px-3 py-1.5 rounded-xl font-semibold bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 transition" data-url="https://www.mbinsumos.com/smart-toner.html">
-              <i class="fa-solid fa-globe mr-1"></i> Dominio mbinsumos.com
             </button>
           </div>
         </div>
@@ -99,7 +96,7 @@
                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Probar enlace #1
               </a>
             </div>
-            <input type="text" id="baseUrlInput" value="https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-xs font-mono text-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" placeholder="https://..." />
+            <input type="text" id="baseUrlInput" value="https://mbinsumos.com/smart-toner.html" class="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-xs font-mono text-zinc-800 focus:border-rose-500 focus:ring-1 focus:ring-rose-500" placeholder="https://mbinsumos.com/smart-toner.html" />
             <p class="text-[11px] text-zinc-500 mt-1">Se le añadirá automáticamente <code class="bg-zinc-100 px-1 rounded">?cid=001</code> hasta <code class="bg-zinc-100 px-1 rounded">?cid=020</code>.</p>
           </div>
 
@@ -171,16 +168,12 @@
     function sanitizeBaseUrl(url) {
       let trimmed = url.trim();
       if (!trimmed) {
-        trimmed = 'https://raw.githack.com/JairRS2/MB_INSUMOS/main/smart-toner.html';
+        trimmed = 'https://mbinsumos.com/smart-toner.html';
       }
       // Verificar si tiene protocolo
       const hasProtocol = /^https?:\/\//i.test(trimmed);
       if (!hasProtocol) {
         urlWarning.classList.remove('hidden');
-        // Si parece un archivo local como smart-toner.html, advertir
-        if (trimmed.endsWith('.html') || !trimmed.includes('.')) {
-          // Mantener advertencia visible
-        }
       } else {
         urlWarning.classList.add('hidden');
       }
@@ -231,7 +224,7 @@
               <span class="font-semibold text-rose-600"><i class="fa-solid fa-qrcode mr-0.5"></i> Guía • Reposición • Reciclaje</span>
             </div>
             <div class="text-[9px] text-zinc-500 flex items-center justify-between mt-0.5">
-              <span>Córdoba, Ver.</span>
+              <span class="font-semibold text-zinc-600">mbinsumos.com</span>
               <span class="font-bold text-zinc-700"><i class="fa-solid fa-phone mr-0.5 text-zinc-400"></i> ${phone}</span>
             </div>
           </div>
